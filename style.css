@@ -47,3 +47,19 @@ img {
 .column_overlay:hover .overlay {
   opacity: 1;
 }
+
+#section_one {
+    display: none;
+}
+
+#section_two {
+    display: none;
+}
+
+#section_three {
+    display: none;
+}
+
+#section_four {
+    display: none;
+}
