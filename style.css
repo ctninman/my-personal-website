@@ -3,12 +3,13 @@ img {
     border-radius: 8px;
     padding: 5px;
     width: 150px;
-    height: 120px;
+    height: auto;
 }
 
-.column {
+.column_overlay {
+    position:relative;
     float: left;
-    width: 20%;
+    width: 21%;
     padding: 10px;
     vertical-align: middle;
 }
@@ -18,3 +19,31 @@ img {
     clear: both;
     display: table;
   }
+
+/* Make the image to responsive */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.8); /* Black see-through */
+  color: #f1f1f1;
+  width: 68%;
+  transition: .5s ease;
+  opacity:0;
+  color: salmon;
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.column_overlay:hover .overlay {
+  opacity: 1;
+}
