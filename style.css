@@ -3,9 +3,15 @@ img {
     border-radius: 8px;
     padding: 5px;
     width: 150px;
-    height: auto;
+    min-height: 200px;
+    max-height: 200px;
+    object-fit: cover;
 }
 
+/*#manny {
+    max-height: 150px;
+}
+*/
 .column_overlay {
     position:relative;
     float: left;
@@ -24,13 +30,13 @@ img {
 .image {
   display: block;
   width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 
 /* The overlay effect - lays on top of the container and over the image */
 .overlay {
   position: absolute;
-  bottom: 0;
+  bottom: 1;
   background: rgb(0, 0, 0);
   background: rgba(0, 0, 0, 0.8); /* Black see-through */
   color: #f1f1f1;
