@@ -1,3 +1,20 @@
-.header {
-    color: red;
+img {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    width: 150px;
+    height: 120px;
 }
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
