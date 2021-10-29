@@ -75,7 +75,7 @@ function renderAlbum (album) {
 }
 
 
-        // *** 
+        // *** TEST
 
 
 // mainSearch.addEventListener('submit', (event) => {
