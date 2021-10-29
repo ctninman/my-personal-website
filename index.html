@@ -18,14 +18,17 @@
       <!-- Possibly add a username input-->
     </div>
 
-    <div id='album-search'>
+    <div id='album-search-results'>
       <!-- Search bar to for albums
       Always present at the top of page-->
-      <form><span style="color:black">Find an album to add</span>
-        <input type="text" name="album" placeholder="Album" id="album search">
-        <input type="submit" value='SEARCH ALBUMS' id='search-albums'>
-        <input type="text" name="album" placeholder="Artist" id="artist search">
-        <input type="submit" value='SEARCH ARTISTS' id='search-artists'>
+        <p>Add an album to your TOP TEN</p>
+      <form id='album-form'>
+        <input type="text" id='album_terms' name="album" placeholder="Album">
+        <input type="submit" name='ALBUM' value='SEARCH ALBUMS' id='button-albums'>
+      </form>
+      <form id='artist-form'>
+        <input type="text" id='artist_terms' name="artist" placeholder="Artist">
+        <input type="submit" name='ARTIST' value='SEARCH ARTISTS' id='button-artists'>
       </form>
     </div>
 

@@ -31,23 +31,41 @@ body {
     display: inline-block
 }
 
-#album-search {
+#album-search-display {
     background-color: white;
+    color: black;
+    margin-left: 7%;
+    margin-right: 7%;
+    border-radius: 12px;
+    padding-left: 50px;
+    font-size: small;
+    align-items: center;
+}
+
+
+
+#album-search-results {
+    background-color: white;
+    color: black;
     margin-left: 10%;
     margin-right: 10%;
     border-radius: 12px;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 50px;
+    font-size: medium;
+    align-items: center;
 }
 
 .album-para {
     margin-top: 5px;
     margin-bottom: 5px;
+
 }
 
 .spot-cover-info {
     height: 150px;
+    display:inline-block;
 
 }
 
@@ -59,7 +77,7 @@ body {
     text-align: center;;
     color: black;
     display: inline-block;
-    
+    margin: 20px;
 }
 
 .album-cover {
@@ -67,12 +85,15 @@ body {
     height: 75px;
     width: 75px;
     display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .album-info {
     background-color: thistle;
     float: right;
     border-radius: 12px;
+    margin: 20px;
 }
 
 #average-year {
@@ -84,6 +105,14 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     border-radius: 12px;
+}
+
+.album-render-div {
+    height:125px;
+    width: 125px;
+    font-size: small;
+    text-align: center;
+    display: inline-table;
 }
 
 #list-number {
