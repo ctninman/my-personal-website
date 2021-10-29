@@ -5,124 +5,243 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type ="text/css" href="style.css">
-    <title>Chris Ninman's Path</title>
+    <title>Top Ten Albums</title>
   </head>
 
   <body>
-    <h1 class="header"><em>Chris Ninman's Path to Programming</em></h1>
-    <h2 id="question">Which of the following was Chris's first major career path?</h2>
+    <form id='enter-id'>
+      <input type='text' id='user_id' placeholder="Enter userName">
+      <input type='submit' value='SUBMIT'>
+    </form>
+    <div>
+      <h1 id='userName-topten' class="header"><em>userName's Top Ten Albums</em></h1>
+      <!-- Possibly add a username input-->
+    </div>
 
-    <div class="row">
-      <div class="column_overlay">
-        <img src="manny.jpeg" alt="Manny" 
-        class="image" id="manny";
-        />
-        <div class="overlay">Manny</div>
+    <div id='album-search'>
+      <!-- Search bar to for albums
+      Always present at the top of page-->
+      <form><span style="color:black">Find an album to add</span>
+        <input type="text" name="album" placeholder="Album" id="album search">
+        <input type="submit" value='SEARCH ALBUMS' id='search-albums'>
+        <input type="text" name="album" placeholder="Artist" id="artist search">
+        <input type="submit" value='SEARCH ARTISTS' id='search-artists'>
+      </form>
+    </div>
+
+    <div id='album-search-display'>
+      <!-- Display results of album search
+      Toggle between visible and hidden-->
+    </div>
+
+    <div id='top-ten'>
+        <!-- NUMBER 1 -->
+      <div class='spot-cover-info' id='album-one'>
+        <div class='list-number'><h1>1</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: Undefined<br>
+          album: Self-Titled<br>
+          genre: Almost Certainly Metal<br>
+          year: 2005</p>
+        </div> 
       </div>
-      <div class="column_overlay">
-        <img src="classical_guitar.png" alt="Classical Guitarist" 
-        class="image" id="guitar";
-        />
-        <div class="overlay">Classical Guitarist</div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-one'>
+        </form>
       </div>
-      <div class="column_overlay">
-        <img src="teacher.jpeg" alt="Third Grade Teacher" 
-        class="image" id="third";
-        />
-        <div class="overlay">Third Grade Teacher</div>
+
+      <!-- NUMBER 2 -->
+      <div class='spot-cover-info' id='album-two'>
+        <div class='list-number'><h1>2</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: Undecided<br>
+          album: Their Best Album<br>
+          genre: Jazz, Maybe?<br>
+          year: 1963</p>
+        </div> 
       </div>
-      <div class="column_overlay">
-        <img src="preschool.jpeg" alt="Preschool Teacher" 
-        class="image" id="prek";
-        />
-        <div class="overlay">Preschool Teacher</div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-two'>
+        </form>
+      </div>
+
+      <!-- NUMBER 3 -->
+      <div class='spot-cover-info' id='album-three'>
+        <div class='list-number'><h1>3</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: My Brother's Favorite Group<br>
+          album: The Most Recent One<br>
+          genre: Hmmmm.... Hip-Hop?<br>
+          year: 2020</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-three'>
+        </form>
+      </div>
+
+      <!-- NUMBER 4 -->
+      <div class='spot-cover-info' id='album-four'>
+        <div class='list-number'><h1>4</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: The Beatles<br>
+          album: That One That Everyone Else Likes, You Know, That One<br>
+          genre: Pop<br>
+          year: You Know, That Year</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-four'>
+        </form>
+      </div>
+
+      <!-- NUMBER 5 -->
+      <div class='spot-cover-info' id='album-five'>
+        <div class='list-number'><h1>5</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: Blah, Blah and the Blahs<br>
+          album: 4<br>
+          genre: Blues<br>
+          year: 1978</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-five'>
+        </form>
+      </div>
+
+      <!-- NUMBER 6 -->
+      <div class='spot-cover-info' id='album-six'>
+        <div class='list-number'><h1>6</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: The Blank Blanks<br>
+          album: {Insert Animal Name}<br>
+          genre: Rock<br>
+          year: 2011</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-six'>
+        </form>
+      </div>
+
+      <!-- NUMBER 7 -->
+      <div class='spot-cover-info' id='album-seven'>
+        <div class='list-number'><h1>7</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: Something That Starts With X<br>
+          album: 1 + 1 + 1 + 2 = Vegan Bacon Cheeseburger<br>
+          genre: New Wave<br>
+          year: 1982</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-seven'>
+        </form>
+      </div>
+          
+      <!-- NUMBER 8 -->
+      <div class='spot-cover-info' id='album-eight'>
+        <div class='list-number'><h1>8</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: My Band<br>
+          album: We Should Be Number 1<br>
+          genre: Garage Rock<br>
+          year: 2020</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-eight'>
+        </form>
+      </div>
+
+      <!-- NUMBER 9 -->
+      <div class='spot-cover-info' id='album-nine'>
+        <div class='list-number'><h1>9</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: Overrated Band<br>
+          album: Everyone Else Like It, Why Can't I?<br>
+          genre: Pop<br>
+          year: 1998</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-nine'>
+        </form>
+      </div>
+
+      <!-- NUMBER 10 -->
+      <div class='spot-cover-info' id='album-ten'>
+        <div class='list-number'><h1>10</h1></div>
+        <div class='album-cover'>???</div>
+        <div class='album-info'>
+          <p class='album-para'>artist: The FreezePops<br>
+          album: My Brain Hurts<br>
+          genre: Alternative<br>
+          year: 2009</p>
+        </div> 
+      </div>
+
+      <div class="reason-form">
+        <form>
+          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason">
+          <input type="submit" value='SUBMIT' id='user-reason-ten'>
+        </form>
       </div>
     </div>
-    
-    <div class="meat">
-    <div id="section_one">
-    <h2 id="path_one">Path 1 - Classical Guitarist</h2>
 
-      <p id="guitar_one" class="guitar_p">
-        Chris's journey began with music, after it began with baseball, or more accurately, anything that was, or resembled, a sport.
-        His musical journey began with the purchase of his first three album's: <strong>Green Day</strong>'s <em>Dookie</em>,
-        <strong>Mariah Carey</strong>'s <em>Daydream</em>, and the <em>Waiting to Exhale</em> soundtrack. By some twist of fater, a
-        love for a nu-metal song that he refuses to admit he ever liked led him to purchase the <em>Ozzfest Live</em> VHS tape, and
-        the gates of heavy metal were opened. Performances by <strong>Slayer</strong>, <strong>Sepultura</strong>, and 
-        <strong>Neurosis</strong>inspired Chris to want to learn to play guitar, coupled with a burning desire to become better at
-        everything than his best friend, who had started playing a year earlier.
-    </p>
-    
-    <p id="guitar_two" class="guitar_p">
-        As a long-haired, slightly smelly teenager, Chris had little direction as to where to go in life. There was only thing
-        for certain, his best friend now had a long neck and six strings. So as not to disown his parents, who had gone to great
-        lengths to save for his college education, Chris knew a four-year stint at a Wisconsin state university was in the cards.
-        Having no other passion than making noise with his guitar, he searched for a heavy metal college guitar program, but ended
-        up settling on classical guitar.
-    </p>
+    <div>
+      <div>
+        <h3 id='average-year'>The average release date for <b>userName</b>’s Top Ten is:</h3>
+      </div>
+      <div id='list-number'><h3>YEAR</h3></div>
     </div>
 
-    <div id="section_two">
-    <h2 id="path_two">Path 2 - Preschool Assistant Teacher</h2>
+    <form id='suggestion'>
+      <input type="text" name="yourName" placeholder="yourName">
+      <input type="text" name="albumLove" placeholder="Album above that you love">
+      <input type="text" name="albumSuggest" placeholder="Similar album you suggest" id="artist search">
+      <input type="submit" value='SUGGEST' id='search-artists'>
+    </form>
 
-    <p id="prek_one" class="prek_p">
-       After finishing up four years of intense study of music theory and classical guitar performance, mixed in with a healthy
-       dose of ping-pong, Chris gave the final performance of his college career at his senior recital. To prevent the auditorium
-       from being too eerily silent, Chris invited a few friends, and his parents invited everyone they knew to the event.
-    </p>
-
-    <p id="prek_two" class="prek_p">
-       One of the concert attendees was a long-time family friend, who happened to be a preschool teacher. She asked Chris what he
-       planned to do after graduating, to which he replied as most music performance majors do, <strong>"Beats me?"</strong> That
-       answer somehow instilled in her a confidence to ask him to apply to be an assistant teacher in her classroom and help shape
-       the minds of the future generation. And thus he did for five years, for better or for worse.
-    </p>
-    </div>
-
-    <div id="section_three">
-    <h2 id="path-three">Path 3 - Manny</h2>
-
-    <p id="manny_one" class="manny_p">
-       Chris's go-getter sister, who had been trying to get him to leave his Madison, Wisconsin comfort zone and come visit her in
-       Brooklyn for years, was finally successful in the summer of 2011. Chris spent his summer sleeping on her couch after spending
-       his days out and about, so as not to be too much of an unwelcome guest. During his countless hours walking around Brooklyn
-       that summer, he met the love of his life while playing volleyball. They spent the summer playing more volleyball, yoga, and
-       whatever other cheap thing they could find to do. The love of his life then returned to Italy for the second half of the 
-       summer, with the possibility of never returning. 
-    </p>
-
-    <p id="manny_two" class="manny_p">
-       As the end of the summer drew near, Chris had to make a decision whether to return to Wisconsin or stay in Brooklyn. He thus
-       declared that if a job was secured, he would stay in Brooklyn and see if his future wife would return. If no job was found,
-       he'd return to Wisconsin and continue to work at the preschool. Chris's sister knew some people who were looking for a new 
-       nanny. Chris met them and their daughter, and ended up spending the next several years exploring NYC with his amazing 2-year-
-       old buddy. Well, I guess this isn't Simpsons world, so she wasn't two for all of those several years. And did the love of
-       Chris's life return from Italy? Of course, who could say no to those pecs? Oh wait, those aren't mine. Ummm, yes she did.
-    </p>
-    </div>
-
-    <div id="section_four">
-    <h2 id="path_four">Path 4 - Third Grade Teacher</h2>
-
-    <p id="teacher_one" class="teacher_p">
-        While continuing to be one of Brooklyn's trendy mannies, Chris got married to the love of his life, and she convinced him return
-        to get his Master's Degree in childhood education. After graduating, Chris was a substitute teacher in Brooklyn for a year, 
-        getting a front row seat to the vastly different experiences across ages and school experiences. He became a third grade teacher,
-        experiencing first-hand how hard teachers work, and how underpaid and underappreciated they are. He will never say a bad word to
-        any of his son's teachers.
-    </p>
-    
-    <p id="teacher_two" class="teacher_p">
-        When the pandemic hit and school was forced to go online, Chris was one of the few teachers at his school who found the new
-        format exciting and invigorating. As someone who is undoubtedly introverted, teaching was an extra stressful situation, and
-        online teaching allowed more time to plan engaging material, without as much time speaking in front of a group. He took charge
-        in creating a website for the school to connect with students and families from the virtual world. He joined the tech commmittee
-        and taught workshops to other teachers on how to incorporate technology into teaching. He had a classroom of third graders who
-        were more technologically proficiend than 95% of the teachers. The passion he had to create educational tech material, combined
-        with many success stories he heard from others who had gone to coding bootcamps, led him to decide it was time to pursue a
-        change to software engineering.
-    </p>
-    </div>
+    <div id='comment-box'>
+      <h2>Suggestions</h2>
     </div>
 
     <script src="index.js"></script>

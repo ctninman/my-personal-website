@@ -1,61 +1,150 @@
 body {
-    background-color: rgb(240, 210, 155);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(images/miriana-doroban-u-iRjOMSpZaEE-unsplash.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #B4F2FE;
+    font-family: 'Revalia';
+    color: white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    
 }
 
 .header {
-    color:rgb(49, 17, 82);
+    background-color: #B4F2FE; 
+    color: black;
     text-align: center;
     margin-bottom: 3px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 12px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-#question {
-    width: 97%;
-    border-radius: 8px;
-    border: 6px solid green;
-    padding: 5px;
-    margin: 2px;
-    text-align: center;
+#user-id {
+    margin-right: 5px;
+    display: inline-block
+}
+
+#album-search {
     background-color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 12px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 50px;
 }
 
-img {
+.album-para {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.spot-cover-info {
+    height: 150px;
+
+}
+
+.list-number {
+    background-color: white;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    text-align: center;;
+    color: black;
+    display: inline-block;
+    
+}
+
+.album-cover {
+    background-color: orange;
+    height: 75px;
+    width: 75px;
+    display: inline-block;
+}
+
+.album-info {
+    background-color: thistle;
+    float: right;
+    border-radius: 12px;
+}
+
+#average-year {
+    background-color: #B4F2FE; 
+    color: black;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3px;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 12px;
+}
+
+#list-number {
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    text-align: center;;
+    color: black;
+    display: block;
+    margin: auto;
+}
+
+#suggestion {
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 12px;
+}
+
+#comment-box{
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 12px;
+    height: 300px;
+    
+}
+/*img {
     border: 4px solid rgb(119, 20, 50);
     border-radius: 15px;
     padding: 5px;
     width: 150px;
-    min-height: 200px;
-    max-height: 200px;
+    min-height: 230px;
+    max-height: 230px;
     object-fit: cover;
 }
+*/
 
-.column_overlay {
-    position:relative;
-    float: left;
-    width: 23%;
-    padding: 10px;
-    vertical-align: middle;
-}
-
+/*
 .row::after {
     content: "";
     clear: both;
     display: table;
   }
+*/
 
-/* Make the image to responsive */
+/* Make the image to responsive
 .image {
   display: block;
   width: 100%;
   object-fit: cover;
 }
+*/
 
-/* The overlay effect - lays on top of the container and over the image */
+/* The overlay effect - lays on top of the container and over the image
 .overlay {
   position: absolute;
   bottom: 1;
   background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.9); /* Black see-through */
+  background: rgba(0, 0, 0, 0.9); Black see-through
   color: #f1f1f1;
   width: 68%;
   transition: .5s ease;
@@ -65,35 +154,11 @@ img {
   padding: 20px;
   text-align: center;
 }
+*/
 
 
-/* When you mouse over the container, fade in the overlay title */
+/* When you mouse over the container, fade in the overlay title
 .column_overlay:hover .overlay {
   opacity: 1;
 }
-
-.meat {
-    width: 97%;
-    border-radius: 8px;
-    padding: 5px;
-    margin: 2px;
-    text-align: center;
-    background-color: rgb(28, 31, 32);
-    color: white;
-}
-
-#section_one {
-    display: none;
-}
-
-#section_two {
-    display: none;
-}
-
-#section_three {
-    display: none;
-}
-
-#section_four {
-    display: none;
-}
+*/

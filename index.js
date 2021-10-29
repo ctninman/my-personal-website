@@ -1,33 +1,14 @@
-const revealManny = document.getElementById("section_three")
-const revealGuitar = document.getElementById("section_one")
-const revealPreK = document.getElementById("section_two")
-const revealThird = document.getElementById("section_four")
+        // *** DECLARED VARIABLES *** //
+let enterId = document.getElementById('enter-id')
+let userName = ""
+let averageYear = document.getElementById('average-year')
 
-document.getElementById("manny").addEventListener("click", function() {
-    revealManny.style.display = "block";
-    revealGuitar.style.display = "none";
-    revealPreK.style.display = "none";  
-    revealThird.style.display = "none";   
-});
-
-
-document.getElementById("guitar").addEventListener("click", function() {
-    revealGuitar.style.display = "block";
-    revealManny.style.display = "none";
-    revealPreK.style.display = "none";  
-    revealThird.style.display = "none";  
-});
-
-document.getElementById("prek").addEventListener("click", function() {
-    revealPreK.style.display = "block";  
-    revealGuitar.style.display = "none";
-    revealManny.style.display = "none";
-    revealThird.style.display = "none";  
-});
-
-document.getElementById("third").addEventListener("click", function() {
-    revealThird.style.display = "block"; 
-    revealPreK.style.display = "none";  
-    revealGuitar.style.display = "none";
-    revealManny.style.display = "none"; 
-});
+        // *** ADD USERNAME TO TITLE *** //
+enterId.addEventListener('submit', (event) => {
+    event.preventDefault();
+    userName = event.target.user_id.value
+    document.getElementById('userName-topten').innerText = 
+    `${userName}'s Top Ten Albums`
+    averageYear.innerText = 
+    `The average release date for ${userName}’s Top Ten is:`
+})
