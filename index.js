@@ -20,6 +20,7 @@ let searchDisplay   = document.getElementById('album-search-display')
 let suggestionForm  = document.getElementById('suggestion')
 let suggestionBox   = document.getElementById('comment-box')
 let albumCovers     = document.getElementsByClassName('album-cover')
+let commentBox      = document.getElementById('comment-box')
 
         // *** ALBUM COVER PLACEHOLDER ID'S *** //
 
@@ -47,7 +48,20 @@ let paraEight = document.getElementById('para-eight')
 let paraNine  = document.getElementById('para-nine')
 let paraTen   = document.getElementById('para-ten')
 
-        // *** COMMENT BOX FOR EACH ALBUM
+        // *** COMMENT BUTTON FOR EACH ALBUM *** //
+
+let commentButtonOne   = document.getElementById('comment-button-one')
+let commentButtonTwo   = document.getElementById('comment-button-two')
+let commentButtonThree = document.getElementById('comment-button-three')
+let commentButtonFour  = document.getElementById('comment-button-four')
+let commentButtonFive  = document.getElementById('comment-button-five')
+let commentButtonSix   = document.getElementById('comment-button-six')
+let commentButtonSeven = document.getElementById('comment-button-seven')
+let commentButtonEight = document.getElementById('comment-button-eight')
+let commentButtonNine  = document.getElementById('comment-button-nine')
+let commentButtonTen   = document.getElementById('comment-button-ten')
+
+        // *** COMMENT BOX FOR EACH ALBUM *** //
 
 let commentOne   = document.getElementById('reason-one')
 let commentTwo   = document.getElementById('reason-two')
@@ -66,11 +80,12 @@ let commentTen   = document.getElementById('reason-ten')
 enterId.addEventListener('submit', (event) => {
   event.preventDefault();
   userName = event.target.user_id.value
+  commentBox.textContent += ` for ${userName}:`
   document.getElementById('userName-topten').innerText = 
   `${userName}'s Top Ten Albums`
   averageYear.innerText = 
   `The average release date for ${userName}’s Top Ten is:`
-  enterId.reset()
+  .then(enterId.reset());
 })
 
 
@@ -136,15 +151,16 @@ function renderAlbum (album) {
     numInputForm.setAttribute('id', 'number_control')
     numInputForm.setAttribute('name', 'number-ctrl')
     numForm.appendChild(numInputForm)
-    let submitNumber = document.createElement('input')
-    submitNumber.setAttribute('type', 'submit')
-    submitNumber.setAttribute('value', 'TO MY TOP TEN!')
-    submitNumber.setAttribute('class', 'button')
-    numForm.appendChild(submitNumber)
-    albumInfo.appendChild(numForm)
     let cancelAdd = document.createElement('BUTTON')
     cancelAdd.textContent = 'X'
     numForm.appendChild(cancelAdd)
+    let submitNumber = document.createElement('input')
+    submitNumber.setAttribute('type', 'submit')
+    submitNumber.setAttribute('value', 'TOP TEN!')
+    submitNumber.setAttribute('class', 'button')
+    numForm.appendChild(submitNumber)
+    albumInfo.appendChild(numForm)
+   
     // cancelAdd.addEventListener('click', () => {
     //   numForm.remove()
     // })
@@ -280,22 +296,164 @@ function renderAlbum (album) {
 })
 }
 
+      // *** DISPLAY COMMENT BOX AFTER CLICK ON '+ COMMENT' BUTTON *** //
+      // *** _____________________________________________________ *** //
 
+commentButtonOne.addEventListener('click', () => {
+  commentOne.style.display = 'inline-block'
+  commentButtonOne.style.display = 'none'
+})
+
+commentButtonTwo.addEventListener('click', () => {
+  commentTwo.style.display = 'inline-block'
+  commentButtonTwo.style.display = 'none'
+})
+
+commentButtonThree.addEventListener('click', () => {
+  commentThree.style.display = 'inline-block'
+  commentButtonThree.style.display = 'none'
+})
+
+commentButtonFour.addEventListener('click', () => {
+  commentFour.style.display = 'inline-block'
+  commentButtonFour.style.display = 'none'
+})
+
+commentButtonFive.addEventListener('click', () => {
+  commentFive.style.display = 'inline-block'
+  commentButtonFive.style.display = 'none'
+})
+
+commentButtonSix.addEventListener('click', () => {
+  commentSix.style.display = 'inline-block'
+  commentButtonSix.style.display = 'none'
+})
+
+commentButtonSeven.addEventListener('click', () => {
+  commentSeven.style.display = 'inline-block'
+  commentButtonSeven.style.display = 'none'
+})
+
+commentButtonEight.addEventListener('click', () => {
+  commentEight.style.display = 'inline-block'
+  commentButtonEight.style.display = 'none'
+})
+
+commentButtonNine.addEventListener('click', () => {
+  commentNine.style.display = 'inline-block'
+  commentButtonNine.style.display = 'none'
+})
+
+commentButtonTen.addEventListener('click', () => {
+  commentTen.style.display = 'inline-block'
+  commentButtonTen.style.display = 'none'
+})
 
         // *** SUBMIT 10 WORD COMMENT FOR ALBUM *** //
+        // *** ________________________________ *** //
     
-  commentOne.addEventListener('submit', (e) => {
-    e.preventDefault();
-    albumComment = e.target.reason_one_text.value
-    console.log(albumComment)
-    // document.getElementById('userName-topten').innerText = 
-    // `${userName}'s Top Ten Albums`
-    // averageYear.innerText = 
-    // `The average release date for ${userName}’s Top Ten is:`
-  })
+commentOne.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_one_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-one').textContent = albumComment
+  }
+})
+
+commentTwo.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_two_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-two').textContent = albumComment
+  }
+})
+
+commentThree.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_three_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-three').textContent = albumComment
+  }
+})
+
+commentFour.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_four_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-four').textContent = albumComment
+  }
+})
+
+commentFive.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_five_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-five').textContent = albumComment
+  }
+})
+
+commentSix.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_six_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-six').textContent = albumComment
+  }
+})
+
+commentSeven.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_seven_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-seven').textContent = albumComment
+  }
+})
+
+commentEight.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_eight_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-eight').textContent = albumComment
+  }
+})
+
+commentNine.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_nine_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-nine').textContent = albumComment
+  }
+})
+
+commentTen.addEventListener('submit', (e) => {
+  e.preventDefault();
+  albumComment = e.target.reason_ten_text.value
+  if (countWords(albumComment) !== 10) {
+    alert("That's not 10 words!")
+  } else {
+    document.getElementById('reason-form-ten').textContent = albumComment
+  }
+})
 
 
-// *** ADD SUGGESTION TO THE SUGGESTION BOX *** //
+        // *** ADD SUGGESTION TO THE SUGGESTION BOX *** //
 
 suggestionForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -310,6 +468,16 @@ suggestionForm.addEventListener('submit', (event) => {
   suggestionForm.reset()
 })
 
+
+function countWords (comment) {
+  let count = 0;
+  for (let i = 0; i < comment.length; i++){
+     const space = comment[i];
+     if(space !== ' '){
+        continue; };
+        count++; };
+     return count + 1;
+};
 
 // class Album {
 //   constructor (artist, album, genre, year, cover) {

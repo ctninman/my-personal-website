@@ -17,13 +17,15 @@ body {
     background-color: #B4F2FE; 
     color: black;
     text-align: center;
-    margin-bottom: 10px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: auto;
     border-radius: 12px;
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin-top: 2px;
+    width:fit-content;
+    align-content: center;
 }
 
 .button {
@@ -33,12 +35,16 @@ body {
 }
 
 input[type=text] {
-    text-align: center;
+    text-align: left;
     padding: 2px 2px;
     margin: 3px 0;
     box-sizing: border-box;
     font-family: 'Revalia', cursive;
   }
+
+input[name='reason'] {
+    width: 500px;
+}
 
 #user-id {
     margin-right: 5px;
@@ -50,30 +56,41 @@ input[type=text] {
     color: black;
     margin-left: 7%;
     margin-right: 7%;
+    margin-top: 10px;
     border-radius: 12px;
-    padding-left: 50px;
+    padding-left: 20px;
     font-size: small;
     align-items: center;
 }
 
 .placed-cover {
+    margin-top: 3px;
+    margin-bottom: 3px;
     margin-left: 10px;
     margin-top: 10px;
     border-radius: 3px;
+    width:100px;
+    max-height: 200px;
+    display: inline-block;
+    border: 2px solid white
 }
 
 .icon {
     margin: 1px;
+    line-height: normal;
+    max-height: 48px;
+    overflow: hidden;
 }
 
 #album-search-results {
     background-color: white;
     color: black;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 10px;
     border-radius: 12px;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     font-size: medium;
     align-items: center;
 }
@@ -81,17 +98,17 @@ input[type=text] {
 .album-para {
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
 
 .spot-cover-info {
-    height: 150px;
+    height: auto;
     display:inline-block;
-
+    margin: auto;
 }
 
 .list-number {
     background-color: white;
+    margin-top: 50px;
     height: 75px;
     width: 75px;
     border-radius: 50px;
@@ -99,10 +116,30 @@ input[type=text] {
     color: black;
     display: inline-block;
     margin: 20px;
+    text-shadow: 1px 1px 2px #111111;
+}
+
+.reason-form {
+    display: block;
+    text-align: center;
+    background-color: lightgreen;
+    color: 	#B22222;
+    border-radius: 12px;
+    margin: auto;
+    width: fit-content;
+    padding-left:25px;
+    padding-right:25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-shadow: 1px 1px 2px #111111;
+    /* margin-left: 15%;
+    margin-right: 15%; */
+    /* color: black; */
 }
 
 .album-cover {
-    background-color: orange;
+    background-color: #27884E;
+    padding: 3px;
     height: 100px;
     width: 100px;
     display: inline-block;
@@ -111,33 +148,32 @@ input[type=text] {
     margin: auto;
     border-radius: 3px;
     vertical-align: middle;
+    border-color: white;
+    border: 1px;
 }
 
 .album-info {
-    background-color: thistle;
+    background-color: #27884E;
+    font-size: 90%;
     float: right;
     border-radius: 12px;
     margin: 20px; 
+    margin-left: 40px;
+    padding-left: 8px;
+    padding-right: 8px;
     width:auto;
-}
+    text-shadow: 1px 1px 2px #111111;
 
-#average-year {
-    background-color: #B4F2FE; 
-    color: black;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 3px;
-    margin-left: 20%;
-    margin-right: 20%;
-    border-radius: 12px;
 }
 
 .album-render-div {
-    height:125px;
+    max-height:125px;
+    overflow: hidden;
     width: 125px;
-    font-size: small;
+    font-size:x-small;
     text-align: center;
     display: inline-table;
+    letter-spacing: 1px;
 }
 
 #list-number {
@@ -149,6 +185,11 @@ input[type=text] {
     color: black;
     display: block;
     margin: auto;
+    align-self: center;
+}
+
+.add-reason-form {
+    display: none
 }
 
 #suggestion {
@@ -156,6 +197,9 @@ input[type=text] {
     margin-left: 5%;
     margin-right: 5%;
     border-radius: 12px;
+    margin-top: 30px;
+    align-content: center;
+    text-align: center;
 }
 
 #comment-box{
@@ -163,8 +207,11 @@ input[type=text] {
     color: black;
     margin-left: 15%;
     margin-right: 15%;
+    margin-top: 20px;
     border-radius: 12px;
-    height: 300px;
+    height: 200px;
+    overflow-y: scroll;
+    font-size: 80%;
     
 }
 /*img {

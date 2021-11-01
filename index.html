@@ -16,7 +16,7 @@
       <input type='text' id='user_id' placeholder="Enter userName">
       <input class='button' type='submit' value='SUBMIT'>
     </form>
-    <div>
+    <div id='user-header'>
       <h2 id='userName-topten' class="header"><em>userName's Top Ten Albums</em></h2>
       <!-- Possibly add a username input-->
     </div>
@@ -55,10 +55,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-one'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason_one_text">
-          <input type="submit" value='SUBMIT' id='user-reason-one'>
+      <div class="reason-form" id='reason-form-one'>
+        <button class='button' id='comment-button-one'>+ COMMENT</button>
+        <form id='reason-one' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_one_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-one'>
         </form>
       </div>
 
@@ -76,10 +77,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-two'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-two-text">
-          <input type="submit" value='SUBMIT' id='user-reason-two'>
+      <div class="reason-form" id='reason-form-two'>
+        <button class='button' id='comment-button-two'>+ COMMENT</button>
+        <form id='reason-two' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_two_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-two'>
         </form>
       </div>
 
@@ -97,10 +99,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-three'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-three-text">
-          <input type="submit" value='SUBMIT' id='user-reason-three'>
+      <div class="reason-form" id='reason-form-three'>
+        <button class='button' id='comment-button-three'>+ COMMENT</button>
+        <form id='reason-three' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_three_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-three'>
         </form>
       </div>
 
@@ -112,16 +115,17 @@
         </div>
         <div class='album-info'>
           <p class='album-para' id='para-four'>artist: The Beatles<br>
-          album: That One That Everyone Else Likes, You Know, That One<br>
+          album: That One That Everyone Else Likes<br>
           genre: Pop<br>
           year: You Know, That Year</p>
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-four'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-four-text">
-          <input type="submit" value='SUBMIT' id='user-reason-four'>
+      <div class="reason-form" id='reason-form-four'>
+        <button class='button' id='comment-button-four'>+ COMMENT</button>
+        <form id='reason-four' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_four_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-four'>
         </form>
       </div>
 
@@ -139,10 +143,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-five'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-five-text">
-          <input type="submit" value='SUBMIT' id='user-reason-five'>
+      <div class="reason-form" id='reason-form-five'>
+        <button class='button' id='comment-button-five'>+ COMMENT</button>
+        <form id='reason-five' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_five_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-five'>
         </form>
       </div>
 
@@ -160,10 +165,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-six'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-six-text">
-          <input type="submit" value='SUBMIT' id='user-reason-six'>
+      <div class="reason-form" id='reason-form-six'>
+        <button class='button' id='comment-button-six'>+ COMMENT</button>
+        <form id='reason-six' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_six_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-six'>
         </form>
       </div>
 
@@ -181,14 +187,15 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-seven'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-seven-text">
-          <input type="submit" value='SUBMIT' id='user-reason-seven'>
+      <div class="reason-form" id='reason-form-seven'>
+        <button class='button' id='comment-button-seven'>+ COMMENT</button>
+        <form id='reason-seven' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_seven_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-seven'>
         </form>
       </div>
           
-      <!-- NUMBER 8 -->
+      <!-- *** NUMBER 8 *** -->
       <div class='spot-cover-info' id='album-eight'>
         <div class='list-number'><h1>8</h1></div>
         <div class='album-cover' id='cover-eight'>
@@ -202,10 +209,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-eight'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-eight-text">
-          <input type="submit" value='SUBMIT' id='user-reason-eight'>
+      <div class="reason-form" id='reason-form-eight'>
+        <button class='button' id='comment-button-eight'>+ COMMENT</button>
+        <form id='reason-eight' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_eight_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-eight'>
         </form>
       </div>
 
@@ -223,10 +231,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-nine'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-nine-text">
-          <input type="submit" value='SUBMIT' id='user-reason-nine'>
+      <div class="reason-form" id='reason-form-nine'>
+        <button class='button' id='comment-button-nine'>+ COMMENT</button>
+        <form id='reason-nine' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_nine_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-nine'>
         </form>
       </div>
 
@@ -244,10 +253,11 @@
         </div> 
       </div>
 
-      <div class="reason-form">
-        <form id='reason-ten'>
-          <input type="text" name="reason" placeholder="Here's why username loves this album using exactly ten words" id="reason-ten-text">
-          <input type="submit" value='SUBMIT' id='user-reason-ten'>
+      <div class="reason-form" id='reason-form-ten'>
+        <button class='button' id='comment-button-ten'>+ COMMENT</button>
+        <form id='reason-ten' class='add-reason-form'>
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_ten_text">
+          <input type="submit" class='button' value='SUBMIT' id='user-reason-ten'>
         </form>
       </div>
     </div>
@@ -261,14 +271,14 @@
 
     <form id='suggestion'>
       <input type="text" name="yourName" id="name_suggestion" placeholder="yourName">
-      <input type="text" name="albumLoved" id="album_loved" placeholder="Album above that you love">
-      <input type="text" name="albumSuggest" id="album_suggestion" placeholder="Similar album you suggest">
+      <input type="text" name="albumLoved" id="album_loved" placeholder="Album above you love">
+      <input type="text" name="albumSuggest" id="album_suggestion" placeholder="Suggest similar album">
       <input type="text" name="artistSuggest" id="artist_suggestion" placeholder="Artist of that album">
       <input type="submit" class='button' value='SUGGEST' id='search-artists'>
     </form>
 
-    <div id='comment-box'>
-      <h2>Suggestions</h2>
+    <div id='comment-box' style="margin-top: 20px;">
+      <h2 style="text-align: center;">Suggestions</h2>
     </div>
 
     <script src="index.js"></script>
