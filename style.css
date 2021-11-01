@@ -1,34 +1,48 @@
 body {
     background-image: url(images/miriana-doroban-u-iRjOMSpZaEE-unsplash.jpg);
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-color: #B4F2FE;
-    font-family: 'Revalia';
+    font-family: 'Revalia', cursive;
     color: white;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px;
     letter-spacing: 0em;
-    text-align: left;
-    
+    text-align: left; 
 }
 
 .header {
     background-color: #B4F2FE; 
     color: black;
     text-align: center;
-    margin-bottom: 3px;
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 12px;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-top: 2px;
 }
+
+.button {
+    background-color: black;
+    font-family: 'Revalia', cursive;
+    color: white;
+}
+
+input[type=text] {
+    text-align: center;
+    padding: 2px 2px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    font-family: 'Revalia', cursive;
+  }
 
 #user-id {
     margin-right: 5px;
-    display: inline-block
+    display: inline-block;
 }
 
 #album-search-display {
@@ -42,17 +56,24 @@ body {
     align-items: center;
 }
 
+.placed-cover {
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
 
+.icon {
+    margin: 1px;
+}
 
 #album-search-results {
     background-color: white;
     color: black;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
     border-radius: 12px;
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 50px;
     font-size: medium;
     align-items: center;
 }
@@ -82,18 +103,22 @@ body {
 
 .album-cover {
     background-color: orange;
-    height: 75px;
-    width: 75px;
+    height: 100px;
+    width: 100px;
     display: inline-block;
-    margin-right: 20px;
-    margin-left: 20px;
+    /* margin-right: 20px;
+    margin-left: 20px; */
+    margin: auto;
+    border-radius: 3px;
+    vertical-align: middle;
 }
 
 .album-info {
     background-color: thistle;
     float: right;
     border-radius: 12px;
-    margin: 20px;
+    margin: 20px; 
+    width:auto;
 }
 
 #average-year {
@@ -135,6 +160,7 @@ body {
 
 #comment-box{
     background-color: white;
+    color: black;
     margin-left: 15%;
     margin-right: 15%;
     border-radius: 12px;
