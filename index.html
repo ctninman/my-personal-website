@@ -12,15 +12,17 @@
   </head>
 
   <body>
-    <form id='enter-id'>
+            <!-- *** ENTER USERNAME *** -->
+    <form id='enter-id' style='text-align: right' style='margin-right: 20px;'>
       <input type='text' id='user_id' placeholder="Enter userName">
       <input class='button' type='submit' value='SUBMIT'>
     </form>
     <div id='user-header'>
       <h2 id='userName-topten' class="header"><em>userName's Top Ten Albums</em></h2>
-      <!-- Possibly add a username input-->
+            <!-- Possibly add a username input-->
     </div>
 
+            <!-- *** ARTIST AND ALBUM SEARCH BAR *** -->
     <div id='album-search-results' style="text-align: center;">
       <!-- Search bar to for albums
       Always present at the top of page-->
@@ -36,26 +38,26 @@
     </div>
 
     <div id='album-search-display'>
-      <!-- Display results of album search
-      Toggle between visible and hidden-->
+            <!-- *** DISPLAY RESULTS OF ALBUM/ARTIST SEARCH *** -->
     </div>
 
     <div id='top-ten'>
-        <!-- NUMBER 1 -->
+            <!-- *** NUMBER 1 *** -->
       <div class='spot-cover-info' id='album-one'>
-        <div class='list-number'><h1>1</h1></div>
-        <div class='album-cover' id='cover-one'>
+        <div class='list-number'><h1 id='match-ranking-1'>1</h1></div>
+        <div class='album-cover' id='cover-1'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input id='remove-one' type="button" class='button2' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-one'>artist: Undefined<br>
+        <div class='album-info' style='background-color: #27884E'>
+          <p class='album-para' id='para-1'>artist: Undefined<br>
           album: Self-Titled<br>
           genre: Almost Certainly Metal<br>
           year: 2005</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-one'>
+      <div class="reason-form" id='reason-form-one' style='background-color: #27884E; color: #ff4d4d;':>
         <button class='button' id='comment-button-one'>+ COMMENT</button>
         <form id='reason-one' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_one_text">
@@ -63,21 +65,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 2 -->
+            <!-- *** NUMBER 2 *** -->
       <div class='spot-cover-info' id='album-two'>
-        <div class='list-number'><h1>2</h1></div>
-        <div class='album-cover' id='cover-two'>
+        <div class='list-number'><h1 id='match-ranking-2'>2</h1></div>
+        <div class='album-cover' id='cover-2' style='background-color: lightgreen'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-two' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-two'>artist: Undecided<br>
+        <div class='album-info' style='background-color: lightgreen'>
+          <p class='album-para' id='para-2'>artist: Undecided<br>
           album: Their Best Album<br>
           genre: Jazz, Maybe?<br>
           year: 1963</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-two'>
+      <div class="reason-form" id='reason-form-two' style='background-color: lightgreen'>
         <button class='button' id='comment-button-two'>+ COMMENT</button>
         <form id='reason-two' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_two_text">
@@ -85,21 +88,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 3 -->
+            <!-- *** NUMBER 3 *** -->
       <div class='spot-cover-info' id='album-three'>
-        <div class='list-number'><h1>3</h1></div>
-        <div class='album-cover' id='cover-three'>
+        <div class='list-number'><h1 id='match-ranking-3'>3</h1></div>
+        <div class='album-cover' id='cover-3'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-three' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-three'>artist: My Brother's Favorite Group<br>
+        <div class='album-info' style='background-color: #27884E'>
+          <p class='album-para' id='para-3'>artist: My Brother's Favorite Group<br>
           album: The Most Recent One<br>
           genre: Hmmmm.... Hip-Hop?<br>
           year: 2020</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-three'>
+      <div class="reason-form" id='reason-form-three' style='background-color: #27884E'>
         <button class='button' id='comment-button-three'>+ COMMENT</button>
         <form id='reason-three' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_three_text">
@@ -107,21 +111,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 4 -->
+            <!-- *** NUMBER 4 *** -->
       <div class='spot-cover-info' id='album-four'>
-        <div class='list-number'><h1>4</h1></div>
-        <div class='album-cover' id='cover-four'>
+        <div class='list-number'><h1 id='match-ranking-4'>4</h1></div>
+        <div class='album-cover' id='cover-4' style='background-color: lightgreen'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-four' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-four'>artist: The Beatles<br>
+        <div class='album-info' style='background-color: lightgreen'>
+          <p class='album-para' id='para-4'>artist: The Beatles<br>
           album: That One That Everyone Else Likes<br>
           genre: Pop<br>
           year: You Know, That Year</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-four'>
+      <div class="reason-form" id='reason-form-four' style='background-color: lightgreen'>
         <button class='button' id='comment-button-four'>+ COMMENT</button>
         <form id='reason-four' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_four_text">
@@ -129,21 +134,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 5 -->
+            <!-- *** NUMBER 5 *** -->
       <div class='spot-cover-info' id='album-five'>
-        <div class='list-number'><h1>5</h1></div>
-        <div class='album-cover' id='cover-five'>
+        <div class='list-number'><h1 id='match-ranking-5'>5</h1></div>
+        <div class='album-cover' id='cover-5'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-five' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-five'>artist: Blah, Blah and the Blahs<br>
+        <div class='album-info' style='background-color: #27884E'>
+          <p class='album-para' id='para-5'>artist: Blah, Blah and the Blahs<br>
           album: 4<br>
           genre: Blues<br>
           year: 1978</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-five'>
+      <div class="reason-form" id='reason-form-five' style='background-color: #27884E'>
         <button class='button' id='comment-button-five'>+ COMMENT</button>
         <form id='reason-five' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_five_text">
@@ -151,21 +157,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 6 -->
+            <!-- *** NUMBER 6 *** -->
       <div class='spot-cover-info' id='album-six'>
-        <div class='list-number'><h1>6</h1></div>
-        <div class='album-cover' id='cover-six'>
+        <div class='list-number'><h1 id='match-ranking-6'>6</h1></div>
+        <div class='album-cover' id='cover-6' style='background-color: lightgreen'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-six' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-six'>artist: The Blank Blanks<br>
+        <div class='album-info' style='background-color: lightgreen'>
+          <p class='album-para' id='para-6'>artist: The Blank Blanks<br>
           album: {Insert Animal Name}<br>
           genre: Rock<br>
           year: 2011</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-six'>
+      <div class="reason-form" id='reason-form-six' style='background-color: lightgreen'>
         <button class='button' id='comment-button-six'>+ COMMENT</button>
         <form id='reason-six' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_six_text">
@@ -173,21 +180,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 7 -->
+            <!-- *** NUMBER 7 *** -->
       <div class='spot-cover-info' id='album-seven'>
-        <div class='list-number'><h1>7</h1></div>
-        <div class='album-cover' id='cover-seven'>
+        <div class='list-number'><h1 id='match-ranking-7'>7</h1></div>
+        <div class='album-cover' id='cover-7'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-seven' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-seven'>artist: Something That Starts With X<br>
+        <div class='album-info' style='background-color: #27884E'>
+          <p class='album-para' id='para-7'>artist: Something That Starts With X<br>
           album: 1 + 1 + 1 + 2 = Vegan Bacon Cheeseburger<br>
           genre: New Wave<br>
           year: 1982</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-seven'>
+      <div class="reason-form" id='reason-form-seven' style='background-color: #27884E'>
         <button class='button' id='comment-button-seven'>+ COMMENT</button>
         <form id='reason-seven' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_seven_text">
@@ -195,21 +203,22 @@
         </form>
       </div>
           
-      <!-- *** NUMBER 8 *** -->
+            <!-- *** NUMBER 8 *** -->
       <div class='spot-cover-info' id='album-eight'>
-        <div class='list-number'><h1>8</h1></div>
-        <div class='album-cover' id='cover-eight'>
+        <div class='list-number'><h1 id='match-ranking-8'>8</h1></div>
+        <div class='album-cover' id='cover-8' style='background-color: lightgreen'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-eight' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-eight'>artist: My Band<br>
+        <div class='album-info' style='background-color: lightgreen'>
+          <p class='album-para' id='para-8'>artist: My Band<br>
           album: We Should Be Number 1<br>
           genre: Garage Rock<br>
           year: 2020</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-eight'>
+      <div class="reason-form" id='reason-form-eight' style='background-color: lightgreen'>
         <button class='button' id='comment-button-eight'>+ COMMENT</button>
         <form id='reason-eight' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_eight_text">
@@ -217,21 +226,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 9 -->
+            <!-- *** NUMBER 9 *** -->
       <div class='spot-cover-info' id='album-nine'>
-        <div class='list-number'><h1>9</h1></div>
-        <div class='album-cover' id='cover-nine'>
+        <div class='list-number'><h1 id='match-ranking-9'>9</h1></div>
+        <div class='album-cover' id='cover-9'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-nine' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-nine'>artist: Overrated Band<br>
+        <div class='album-info' style='background-color: #27884E'> 
+          <p class='album-para' id='para-9'>artist: Overrated Band<br>
           album: Everyone Else Like It, Why Can't I?<br>
           genre: Pop<br>
           year: 1998</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-nine'>
+      <div class="reason-form" id='reason-form-nine' style='background-color: #27884E'>
         <button class='button' id='comment-button-nine'>+ COMMENT</button>
         <form id='reason-nine' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_nine_text">
@@ -239,21 +249,22 @@
         </form>
       </div>
 
-      <!-- NUMBER 10 -->
+            <!-- *** NUMBER 10 *** -->
       <div class='spot-cover-info' id='album-ten'>
-        <div class='list-number'><h1>10</h1></div>
-        <div class='album-cover' id='cover-ten'>
+        <div class='list-number'><h1 id='match-ranking-10'>10</h1></div>
+        <div class='album-cover' id='cover-10' style='background-color: lightgreen'>
           <img src='Blue_question_mark_icon.svg.png' height="100" width="100">
+          <input type="button" class='button2' id='remove-ten' text="X" value="X">
         </div>
-        <div class='album-info'>
-          <p class='album-para' id='para-ten'>artist: The FreezePops<br>
+        <div class='album-info' style='background-color: lightgreen'>
+          <p class='album-para' id='para-10'>artist: The FreezePops<br>
           album: My Brain Hurts<br>
           genre: Alternative<br>
           year: 2009</p>
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-ten'>
+      <div class="reason-form" id='reason-form-ten' style='background-color: lightgreen'>
         <button class='button' id='comment-button-ten'>+ COMMENT</button>
         <form id='reason-ten' class='add-reason-form'>
           <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_ten_text">
@@ -262,13 +273,7 @@
       </div>
     </div>
 
-    <!-- <div>
-      <div>
-        <h3 id='average-year'>The average release date for <b>userName</b>’s Top Ten is:</h3>
-      </div>
-      <div id='list-number'><h3>YEAR</h3></div>
-    </div> -->
-
+          <!-- *** FORM TO ENTER ALBUM SUGGESTION *** -->
     <form id='suggestion'>
       <input type="text" name="yourName" id="name_suggestion" placeholder="yourName">
       <input type="text" name="albumLoved" id="album_loved" placeholder="Album above you love">
@@ -276,7 +281,7 @@
       <input type="text" name="artistSuggest" id="artist_suggestion" placeholder="Artist of that album">
       <input type="submit" class='button' value='SUGGEST' id='search-artists'>
     </form>
-
+          <!-- *** DISPLAY OF OTHER USER COMMENTS *** -->
     <div id='comment-box' style="margin-top: 20px;">
       <h2 style="text-align: center;">Suggestions</h2>
     </div>

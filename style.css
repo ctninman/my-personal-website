@@ -13,21 +13,6 @@ body {
     text-align: left; 
 }
 
-.header {
-    background-color: #B4F2FE; 
-    color: black;
-    text-align: center;
-    margin: auto;
-    border-radius: 12px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-top: 2px;
-    width:fit-content;
-    align-content: center;
-}
-
 .button {
     background-color: black;
     font-family: 'Revalia', cursive;
@@ -46,40 +31,19 @@ input[name='reason'] {
     width: 500px;
 }
 
-#user-id {
-    margin-right: 5px;
-    display: inline-block;
-}
-
-#album-search-display {
-    background-color: white;
+.header {
+    background-color: #B4F2FE; 
     color: black;
-    margin-left: 7%;
-    margin-right: 7%;
-    margin-top: 10px;
+    text-align: center;
+    margin: auto;
     border-radius: 12px;
-    padding-left: 20px;
-    font-size: small;
-    align-items: center;
-}
-
-.placed-cover {
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-radius: 3px;
-    width:100px;
-    max-height: 200px;
-    display: inline-block;
-    border: 2px solid white
-}
-
-.icon {
-    margin: 1px;
-    line-height: normal;
-    max-height: 48px;
-    overflow: hidden;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+    width:fit-content;
+    align-content: center;
 }
 
 #album-search-results {
@@ -95,75 +59,16 @@ input[name='reason'] {
     align-items: center;
 }
 
-.album-para {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.spot-cover-info {
-    height: auto;
-    display:inline-block;
-    margin: auto;
-}
-
-.list-number {
+#album-search-display {
     background-color: white;
-    margin-top: 50px;
-    height: 75px;
-    width: 75px;
-    border-radius: 50px;
-    text-align: center;;
     color: black;
-    display: inline-block;
-    margin: 20px;
-    text-shadow: 1px 1px 2px #111111;
-}
-
-.reason-form {
-    display: block;
-    text-align: center;
-    background-color: lightgreen;
-    color: 	#B22222;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 10px;
     border-radius: 12px;
-    margin: auto;
-    width: fit-content;
-    padding-left:25px;
-    padding-right:25px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    text-shadow: 1px 1px 2px #111111;
-    /* margin-left: 15%;
-    margin-right: 15%; */
-    /* color: black; */
-}
-
-.album-cover {
-    background-color: #27884E;
-    padding: 3px;
-    height: 100px;
-    width: 100px;
-    display: inline-block;
-    /* margin-right: 20px;
-    margin-left: 20px; */
-    margin: auto;
-    border-radius: 3px;
-    vertical-align: middle;
-    border-color: white;
-    border: 1px;
-}
-
-.album-info {
-    background-color: #27884E;
-    font-size: 90%;
-    float: right;
-    border-radius: 12px;
-    margin: 20px; 
-    margin-left: 40px;
-    padding-left: 8px;
-    padding-right: 8px;
-    width:auto;
-    text-shadow: 1px 1px 2px #111111;
-
+    padding-left: 20px;
+    font-size: small;
+    align-items: center;
 }
 
 .album-render-div {
@@ -176,20 +81,111 @@ input[name='reason'] {
     letter-spacing: 1px;
 }
 
-#list-number {
+.spot-cover-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
+}
+
+.list-number {
+    order: 1;
     background-color: white;
+    height: 65px;
+    width: 65px;
+    border-radius: 50px;
+    box-shadow: 0 0 0 25px #484848;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    display: flex;
+    text-shadow: 1px 1px 2px #111111;
+    margin-left: 20px;
+}
+
+.album-cover {
+    order: 2;
+    background-color: #27884E;
+    padding: 3px;
     height: 100px;
     width: 100px;
-    border-radius: 50px;
-    text-align: center;;
-    color: black;
-    display: block;
-    margin: auto;
-    align-self: center;
+    display: inline-block;
+    border-radius: 3px;
+    vertical-align: middle;
+    border-color: white;
+    border: 1px;
+    margin-left: 40px;
+}
+
+.album-info {
+    order: 3;
+    /* background-color: #27884E; */
+    font-size: 90%;
+    float: right;
+    border-radius: 12px;
+    margin: 20px; 
+    margin-left: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+    width:auto;
+    text-shadow: 1px 1px 2px #111111;
+}
+
+.button2 {
+    margin-left: 50%; 
+    transform: translateX(-50%);
+    background-color: white;
+    color: #B22222;
+    font-family: 'Revalia', cursive;
+    display: none;
+}
+
+.icon {
+    margin: 1px;
+    line-height: normal;
+    max-height: 48px;
+    overflow: hidden;
+}
+
+.placed-cover {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+    width:100px;
+    max-height: 200px;
+    display: inline-block;
+    border: 2px solid white
+}
+
+.album-para {
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .add-reason-form {
     display: none
+}
+
+.reason-form {
+    display: block;
+    text-align: center;
+    /* background-color: lightgreen; */
+    color: 	#B22222;
+    border-radius: 12px;
+    margin: auto;
+    width: fit-content;
+    padding-left:25px;
+    padding-right:25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-shadow: 1px 1px 2px #111111;
 }
 
 #suggestion {
@@ -206,61 +202,11 @@ input[name='reason'] {
     background-color: white;
     color: black;
     margin-left: 15%;
+    text-align: center;
     margin-right: 15%;
     margin-top: 20px;
     border-radius: 12px;
     height: 200px;
     overflow-y: scroll;
     font-size: 80%;
-    
 }
-/*img {
-    border: 4px solid rgb(119, 20, 50);
-    border-radius: 15px;
-    padding: 5px;
-    width: 150px;
-    min-height: 230px;
-    max-height: 230px;
-    object-fit: cover;
-}
-*/
-
-/*
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-*/
-
-/* Make the image to responsive
-.image {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-*/
-
-/* The overlay effect - lays on top of the container and over the image
-.overlay {
-  position: absolute;
-  bottom: 1;
-  background: rgb(0, 0, 0);
-  background: rgba(0, 0, 0, 0.9); Black see-through
-  color: #f1f1f1;
-  width: 68%;
-  transition: .5s ease;
-  opacity:0;
-  color: salmon;
-  font-size: 22px;
-  padding: 20px;
-  text-align: center;
-}
-*/
-
-
-/* When you mouse over the container, fade in the overlay title
-.column_overlay:hover .overlay {
-  opacity: 1;
-}
-*/

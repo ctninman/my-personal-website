@@ -2,6 +2,30 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(`Now I will load ${userName}'s chosen albums`)
 })
 
+        // *** LOAD USER TOP TEN WHEN USERNAME IS ENTERED *** //
+function fetchUserData () {
+  return fetch(`http://localhost:3000/userCollections`, {method: 'GET'})
+  .then(res => res.json())
+  .then(function (userData) {
+    console.log(userData)
+    userData.forEach((album) => {
+      if (userName === album.userName) {
+        for (let i = 0; i <album.albums.length; i++) {
+            let topTenAlbum = document.getElementById(`para-${i+1}`).innerHTML = `artist: ${album.albums[i].artistName}<br>
+            album: ${album.albums[i].collectionName}<br>
+            genre: ${album.albums[i].primaryGenreName}<br>
+            year: ${album.albums[i].releaseDate}`
+            console.log ('this album is ranked', album)
+            document.getElementById(`cover-${i+1}`).innerHTML = `
+            <img class='placed-cover' src=${album.albums[i].artworkUrl100} height="100" width="100">
+          <input type="button" class='button2' id='remove-eight' text="X" value="X"></input>
+          `
+          } 
+        }
+      })
+    })
+}
+
 
         // *** DECLARED VARIABLES *** //
 
@@ -13,40 +37,39 @@ let nameSuggestion  = ""
 let albumLoved      = ""
 let albumSuggestion = ""
 let artistSuggestion= ""
-let averageYear     = document.getElementById('average-year')
 let albumSearch     = document.getElementById('album-form')
 let artistSearch    = document.getElementById('artist-form')
 let searchDisplay   = document.getElementById('album-search-display')
 let suggestionForm  = document.getElementById('suggestion')
 let suggestionBox   = document.getElementById('comment-box')
-let albumCovers     = document.getElementsByClassName('album-cover')
+// let albumCovers     = document.getElementsByClassName('album-cover')
 let commentBox      = document.getElementById('comment-box')
 
         // *** ALBUM COVER PLACEHOLDER ID'S *** //
 
-let coverOne   = document.getElementById('cover-one');
-let coverTwo   = document.getElementById('cover-two');
-let coverThree = document.getElementById('cover-three');
-let coverFour  = document.getElementById('cover-four')
-let coverFive  = document.getElementById('cover-five')
-let coverSix   = document.getElementById('cover-six')
-let coverSeven = document.getElementById('cover-seven')
-let coverEight = document.getElementById('cover-eight')
-let coverNine  = document.getElementById('cover-nine')
-let coverTen   = document.getElementById('cover-ten')
+let coverOne   = document.getElementById('cover-1');
+let coverTwo   = document.getElementById('cover-2');
+let coverThree = document.getElementById('cover-3');
+let coverFour  = document.getElementById('cover-4')
+let coverFive  = document.getElementById('cover-5')
+let coverSix   = document.getElementById('cover-6')
+let coverSeven = document.getElementById('cover-7')
+let coverEight = document.getElementById('cover-8')
+let coverNine  = document.getElementById('cover-9')
+let coverTen   = document.getElementById('cover-10')
 
         // *** ALBUM INFO PARAGRAPH ID'S *** //
 
-let paraOne   = document.getElementById('para-one')
-let paraTwo   = document.getElementById('para-two')
-let paraThree = document.getElementById('para-three')
-let paraFour  = document.getElementById('para-four')
-let paraFive  = document.getElementById('para-five')
-let paraSix   = document.getElementById('para-six')
-let paraSeven = document.getElementById('para-seven')
-let paraEight = document.getElementById('para-eight')
-let paraNine  = document.getElementById('para-nine')
-let paraTen   = document.getElementById('para-ten')
+let paraOne   = document.getElementById('para-1')
+let paraTwo   = document.getElementById('para-2')
+let paraThree = document.getElementById('para-3')
+let paraFour  = document.getElementById('para-4')
+let paraFive  = document.getElementById('para-5')
+let paraSix   = document.getElementById('para-6')
+let paraSeven = document.getElementById('para-7')
+let paraEight = document.getElementById('para-8')
+let paraNine  = document.getElementById('para-9')
+let paraTen   = document.getElementById('para-10')
 
         // *** COMMENT BUTTON FOR EACH ALBUM *** //
 
@@ -75,17 +98,16 @@ let commentNine  = document.getElementById('reason-nine')
 let commentTen   = document.getElementById('reason-ten')
 
 
-        // *** ADD USERNAME TO TITLE *** //
+        // *** ADD USERNAME TO TITLE AND SUGGESTION BOX *** //
 
 enterId.addEventListener('submit', (event) => {
   event.preventDefault();
   userName = event.target.user_id.value
-  commentBox.textContent += ` for ${userName}:`
+  commentBox.textContent = `Suggestions for ${userName}:`
   document.getElementById('userName-topten').innerText = 
   `${userName}'s Top Ten Albums`
-  averageYear.innerText = 
-  `The average release date for ${userName}’s Top Ten is:`
-  .then(enterId.reset());
+  enterId.reset();
+  fetchUserData();
 })
 
 
@@ -96,13 +118,14 @@ albumSearch.addEventListener('submit', (event) => {
   searchDisplay.innerHTML = ""
   let album = event.target.album_terms.value
   let albumsArray = []
-  console.log(album)
   return fetch(`https://itunes.apple.com/search?term=${album}&entity=album&attribute=albumTerm`, {method: 'GET'})
   .then(res => res.json())
   .then(function (albumData) {
     albumsArray = albumData.results;
+    console.log('albumsArray:', albumsArray)
     albumsArray.forEach(album => renderAlbum(album));
     albumSearch.reset()
+    artistSearch.reset()
   })
 })
 
@@ -113,18 +136,20 @@ artistSearch.addEventListener('submit', (event) => {
   event.preventDefault()
   searchDisplay.innerHTML = ""
   let artist = event.target.artist_terms.value
-  console.log(artist)
+  let albumsArray = []
+      // ????? IS IT POSSIBLE TO DECLARE THE INTERPOLATING URL OUTSIDE THE FUNCTION? //
+      // ????? ARTIST IS UNDEFINED // IF SO, CREATE FUNCTION THAT PASSES IN URL 
   return fetch(`https://itunes.apple.com/search?term=${artist}&entity=album&attribute=artistTerm`, {method: 'GET'})
   .then(res => res.json())
   .then(function (albumData) {
-    // let searchResultsDisplay = document.createElement('h6')
-    // searchResultsDisplay = `'Showing results for:', ${artist}`
-    // searchDisplay.appendChild(searchResultsDisplay)
     albumsArray = albumData.results;
+    console.log('albumsArray:', albumsArray)
     albumsArray.forEach(album => renderAlbum(album));
     artistSearch.reset()
+    albumSearch.reset()
   })
 })
+
 
 
         // *** CREATE AN ALBUM IN THE SEARCH DISPLAY BOX *** //
@@ -172,6 +197,7 @@ function renderAlbum (album) {
             // *** USING ALBUM RANK, ADD ALBUM COVER *** //
             // *** AND ARTIST, ALBUM, GENRE, AND YEAR *** //
       if (albumRanking == 1) {
+        document.getElementById("remove-one").setAttribute = 'style', 'inline-block';
         coverOne.innerHTML = ""
         let albumCover = document.createElement('img')
         albumCover.src = `${album.artworkUrl100}`
@@ -182,6 +208,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-one'
       }
       if (albumRanking == 2) {
         coverTwo.innerHTML = ""
@@ -194,6 +221,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-two'
       } 
       if (albumRanking == 3) {
         coverThree.innerHTML = ""
@@ -206,6 +234,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-three'
       }
       if (albumRanking == 4) {
         coverFour.innerHTML = ""
@@ -218,6 +247,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-four'
       } 
       if (albumRanking == 5) {
         coverFive.innerHTML = ""
@@ -230,6 +260,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-five'
       }
       if (albumRanking == 6) {
         coverSix.innerHTML = ""
@@ -242,6 +273,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-six'
       } 
       if (albumRanking == 7) {
         coverSeven.innerHTML = ""
@@ -254,6 +286,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-seven'
       }
       if (albumRanking == 8) {
         coverEight.innerHTML = ""
@@ -266,6 +299,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-eight'
       } 
       if (albumRanking == 9) {
         coverNine.innerHTML = ""
@@ -278,6 +312,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-nine'
       }
       if (albumRanking == 10) {
         coverTen.innerHTML = ""
@@ -290,6 +325,7 @@ function renderAlbum (album) {
         album: ${album.collectionName}<br>
         genre: ${album.primaryGenreName}<br>
         year: ${album.releaseDate.slice(0,4)}`
+        window.location.hash = 'album-ten'
       } 
   })
   }
