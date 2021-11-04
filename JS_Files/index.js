@@ -1,13 +1,10 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // *** Eventually: Check for user login info and load *** //
-  console.log(`Now I will load ${userName}'s chosen albums`)
-})
-
 
                 // *** DECLARED VARIABLES *** //
                 // *** __________________ *** //
 
-let userID;          
+let userID;    
+let userNameObject;
+let fullUserObject;      
 let userName          = "";
 let albumRank         = "";
 let albumComment      = "";
@@ -23,27 +20,15 @@ const searchDisplay   = document.getElementById('album-search-display');
 const suggestionForm  = document.getElementById('suggestion');
 const commentBox      = document.getElementById('comment-box');
 
-        // *** COMMENT BOX FOR EACH ALBUM *** //
-
-let commentOne   = document.getElementById('reason-1');
-let commentTwo   = document.getElementById('reason-2');
-let commentThree = document.getElementById('reason-3');
-let commentFour  = document.getElementById('reason-4');
-let commentFive  = document.getElementById('reason-5');
-let commentSix   = document.getElementById('reason-6');
-let commentSeven = document.getElementById('reason-7');
-let commentEight = document.getElementById('reason-8');
-let commentNine  = document.getElementById('reason-9');
-let commentTen   = document.getElementById('reason-10');
-
 
               // *** FUNCTION DECLARATIONS *** //
               // *** _____________________ *** //
 
+
         // *** LOAD USER TOP TEN WHEN USERNAME IS ENTERED *** //
         // *** CALLED IN enterId SUBMIT EVENT LISTENER    *** //
 
-function fetchUserData (userDataObject) {
+function fetchUserData () {
   return fetch(`http://localhost:3000/userCollections`, {method: 'GET'})
   .then(res => res.json())
   .then(function (userData) {
@@ -53,32 +38,25 @@ function fetchUserData (userDataObject) {
       return userName === user.userName
     })
     if (foundUser) {
-        userID = foundUser.id;
-        for (let i = 0; i <foundUser.albums.length; i++) {
-          changeTopTenInfo(foundUser, i)
-        }
+      userID = foundUser.id;
+      for (let i = 0; i <foundUser.albums.length; i++) {
+        debugger
+        changeTopTenInfo(foundUser, i)
+      }
+    } else {
+      userNameObject = {userName: `${userName}`}
+      fullUserObject ={...userNameObject, ...userDataObject}
+      createUserData(fullUserObject)
     }
   })
 }
-      // if foundUser ...
-      // if (userName === user.userName) {
-      //   } 
-// ?????????? GOAL, IF USER NAME IS FOUND, LOAD THAT USERS COLLECTION, THIS WORKS BUT CONTINUES TO ITERATE
-// ?????????? THROUGH ALL USERS AFTER. IF I FIND A MATCHING USER NAME, RETURN THAT COLLECTION
-// ?????????? IF THERE IS NO MATCH, RUN createUserData. CURRENTLY CREATES NEW USER FOR EACH EXISTING USER
-// ?????????? NOT NAMED EQUAL TO userID 
-      // } else {
-      //   let userDataObject = {
-      //     userName: `${userName}`,
-      //     albums: ""
-      //   }
-      //   createUserData(userDataObject);
-    // })
+
 
         // *** USE DATABASE TO RENDER INFO OF EACH ALBUM *** //
         // *** CALLED IN fetchUserData *** //
 
 function changeTopTenInfo (user, i) {
+  document.getElementById(`para-${i+1}`).innerHTML = ""
   document.getElementById(`para-${i+1}`).innerHTML = `artist: ${user.albums[i].artistName}<br>
   album: ${user.albums[i].collectionName}<br>
   genre: ${user.albums[i].primaryGenreName}<br>
@@ -162,13 +140,13 @@ function renderAlbum (album) {
 
         // *** USES userDataObject (object with user name and albums key) TO CREATE NEW USER AND ID
         // *** IN DATABASE. CALLED IN fetchUserData, WHICH IS CALLED IN enterID LISTENER *** //
-function createUserData (userDataObject) {
+function createUserData (userObject) {
   fetch('http://localhost:3000/userCollections', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body:JSON.stringify(userDataObject)
+    body:JSON.stringify(userObject)
   })
   .then(res => res.json())
   .then(user => {
@@ -177,7 +155,7 @@ function createUserData (userDataObject) {
 }
 
 
-function patchUserTopTen (albumObject) {
+function patchUserTopTen () {
   fetch(`http://localhost:3000/userCollections/${userID}`, {
     method: 'PATCH',
     headers: {
@@ -208,101 +186,101 @@ function countWords (userComment) {
 
         // *** ADD USERNAME TO TITLE AND SUGGESTION BOX *** //
 
-enterId.addEventListener('submit', (event) => {
-  event.preventDefault();
-  userName = event.target.user_id.value;
-  document.getElementById('userName-topten').innerText = 
-  `${userName}'s Top Ten Albums`;
-  commentBox.textContent = `Suggestions for ${userName}:`;
-  enterId.reset();
-  fetchUserData();
-})
+// enterId.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   userName = event.target.user_id.value;
+//   document.getElementById('userName-topten').innerText = 
+//   `${userName}'s Top Ten Albums`;
+//   commentBox.textContent = `Suggestions for ${userName}:`;
+//   enterId.reset();
+//   fetchUserData();
+// })
 
 
-        // *** SEARCH ITUNES API WITH ALBUM PARAMETERS *** //
+//         // *** SEARCH ITUNES API WITH ALBUM PARAMETERS *** //
 
-albumSearch.addEventListener('submit', (event) => {
-  event.preventDefault();
-  searchDisplay.innerHTML = "";
-  let albumsArray = [];
-  return fetch(url(event.target.album_terms.value, 'album'), {method: 'GET'})
-  .then(res => res.json())
-  .then(function (albumData) {
-    albumsArray = albumData.results;
-    albumsArray.forEach(album => renderAlbum(album));
-    albumSearch.reset();
-    artistSearch.reset();
-  })
-})
+// albumSearch.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   searchDisplay.innerHTML = "";
+//   let albumsArray = [];
+//   return fetch(url(event.target.album_terms.value, 'album'), {method: 'GET'})
+//   .then(res => res.json())
+//   .then(function (albumData) {
+//     albumsArray = albumData.results;
+//     albumsArray.forEach(album => renderAlbum(album));
+//     albumSearch.reset();
+//     artistSearch.reset();
+//   })
+// })
 
 
-        // *** SEARCH ITUNES API WITH ARTIST PARAMETERS *** //
-let url = (searchTerm, type) => {
-  return `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=${type}Term`
-}
+//         // *** SEARCH ITUNES API WITH ARTIST PARAMETERS *** //
+// let url = (searchTerm, type) => {
+//   return `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=${type}Term`
+// }
         
-artistSearch.addEventListener('submit', (event) => {
-  event.preventDefault();
-  searchDisplay.innerHTML = "";
-  let albumsArray = [];
-      // ????? IS IT POSSIBLE TO DECLARE THE INTERPOLATING URL OUTSIDE THE FUNCTION? //
-      // ????? ARTIST IS UNDEFINED // IF SO, CREATE FUNCTION THAT PASSES IN URL 
-  return fetch(url(event.target.artist_terms.value, 'artist'), {method: 'GET'})
-  .then(res => res.json())
-  .then(function (albumData) {
-    albumsArray = albumData.results;
-    albumsArray.forEach(album => renderAlbum(album));
-    artistSearch.reset();
-    albumSearch.reset();
-  })
-})
+// artistSearch.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   searchDisplay.innerHTML = "";
+//   let albumsArray = [];
+//       // ????? IS IT POSSIBLE TO DECLARE THE INTERPOLATING URL OUTSIDE THE FUNCTION? //
+//       // ????? ARTIST IS UNDEFINED // IF SO, CREATE FUNCTION THAT PASSES IN URL 
+//   return fetch(url(event.target.artist_terms.value, 'artist'), {method: 'GET'})
+//   .then(res => res.json())
+//   .then(function (albumData) {
+//     albumsArray = albumData.results;
+//     albumsArray.forEach(album => renderAlbum(album));
+//     artistSearch.reset();
+//     albumSearch.reset();
+//   })
+// })
         
 
-      // *** DISPLAY COMMENT BOX AFTER CLICK ON '+ COMMENT' BUTTON *** //
-      // *** _____________________________________________________ *** //
-      // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
+//       // *** DISPLAY COMMENT BOX AFTER CLICK ON '+ COMMENT' BUTTON *** //
+//       // *** _____________________________________________________ *** //
+//       // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
 
 
 
 
 
-topTen.addEventListener('click', (event) => {
-  if (event.target.className === 'button') {
-    let numRank = parseInt(event.target.id.slice(15))
-    document.getElementById(`reason-${numRank}`).style.display = 'inline-block'
-    document.getElementById(`comment-button-${numRank}`).style.display = 'none'
-    document.getElementById(`reason-${numRank}`).addEventListener('submit', (e) => {
-      e.preventDefault();
-      ///////?????????????????????????
-      debugger
-      albumComment = e.currentTarget.reason.value
-      console.log('album Comment:', albumComment)
-      if (countWords(albumComment) !== 10) {
-        alert("That's not 10 words!")
-      } else {
-        document.getElementById(`reason-${numRank}`).textContent = albumComment
-      }
-    })
-  }
-})
+// topTen.addEventListener('click', (event) => {
+//   if (event.target.className === 'button') {
+//     let numRank = parseInt(event.target.id.slice(15))
+//     document.getElementById(`reason-${numRank}`).style.display = 'inline-block'
+//     document.getElementById(`comment-button-${numRank}`).style.display = 'none'
+//     document.getElementById(`reason-${numRank}`).addEventListener('submit', (e) => {
+//       e.preventDefault();
+//       ///////?????????????????????????
+//       debugger
+//       albumComment = e.currentTarget.reason.value
+//       console.log('album Comment:', albumComment)
+//       if (countWords(albumComment) !== 10) {
+//         alert("That's not 10 words!")
+//       } else {
+//         document.getElementById(`reason-${numRank}`).textContent = albumComment
+//       }
+//     })
+//   }
+// })
 
 
-        // *** ADD SUGGESTION TO THE SUGGESTION BOX *** //
+//         // *** ADD SUGGESTION TO THE SUGGESTION BOX *** //
 
-suggestionForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  let nameSuggestion = event.target.name_suggestion.value;
-  let albumLoved = event.target.album_loved.value;
-  let albumSuggestion = event.target.album_suggestion.value;
-  let artistSuggestion = event.target.artist_suggestion.value;
-  let otherUserComment = document.createElement('p');
-  otherUserComment.textContent =
-  `${nameSuggestion} loves "${albumLoved}", too, and suggests you check out "${albumSuggestion}" by ${artistSuggestion}!`;
-  commentBox.appendChild(otherUserComment);
-  suggestionForm.reset()
-})
+// suggestionForm.addEventListener('submit', (event) => {
+//   event.preventDefault();
+//   let nameSuggestion = event.target.name_suggestion.value;
+//   let albumLoved = event.target.album_loved.value;
+//   let albumSuggestion = event.target.album_suggestion.value;
+//   let artistSuggestion = event.target.artist_suggestion.value;
+//   let otherUserComment = document.createElement('p');
+//   otherUserComment.textContent =
+//   `${nameSuggestion} loves "${albumLoved}", too, and suggests you check out "${albumSuggestion}" by ${artistSuggestion}!`;
+//   commentBox.appendChild(otherUserComment);
+//   suggestionForm.reset()
+// })
 
 
 
   
-// google dataset.html event.target.dataset.id
+// // google dataset.html event.target.dataset.id

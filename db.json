@@ -173,45 +173,8 @@
       ]
     },
     {
-      "userName": "jimbo jones",
-      "albums": "",
-      "id": 3
-    },
-    {
-      "userName": "jimbo jones",
-      "albums": "",
-      "id": 4,
-      "albumRank": "4",
-      "artistName": "Sepultura",
-      "collectionName": "Roots (Remastered)",
-      "primaryGenreName": "Metal",
-      "releaseDate": "1996",
-      "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/b5/85/db/b585dbdb-461a-6ee7-0c36-016a38ef2573/source/100x100bb.jpg"
-    },
-    {
-      "userName": "peterpan",
-      "albums": [],
-      "id": 5,
-      "album": []
-    },
-    {
-      "userName": "peterpan",
-      "albums": "",
-      "id": 6
-    },
-    {
-      "userName": "peterpan",
-      "albums": "",
-      "id": 7
-    },
-    {
-      "userName": "peterpan",
-      "albums": "",
-      "id": 8
-    },
-    {
       "userName": "chirpy",
-      "id": 9,
+      "id": 3,
       "albums": [
         {
           "ranking": 1,
@@ -302,50 +265,176 @@
       "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music127/v4/b8/d6/93/b8d693d7-a84b-786c-9949-92d603eeb4c9/source/100x100bb.jpg"
     },
     {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 10
+      "userName": "pattycakes",
+      "id": 4,
+      "albums": [
+        {
+          "ranking": 1,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 2,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 3,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 4,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 5,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 6,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 7,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 8,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 9,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 10,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        }
+      ]
     },
     {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 11
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 12
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 13
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 14
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 15
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 16
-    },
-    {
-      "userName": "chirpy",
-      "albums": "",
-      "id": 17,
-      "albumRank": "1",
-      "artistName": "Sepultura",
-      "collectionName": "Roots (Remastered)",
-      "primaryGenreName": "Metal",
-      "releaseDate": "1996",
-      "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/b5/85/db/b585dbdb-461a-6ee7-0c36-016a38ef2573/source/100x100bb.jpg"
+      "userName": "big bertha",
+      "albums": [
+        {
+          "ranking": 1,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 2,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 3,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 4,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 5,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 6,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 7,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 8,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 9,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        },
+        {
+          "ranking": 10,
+          "artistName": "???",
+          "collectionName": "???",
+          "primaryGenreName": "???",
+          "releaseDate": "???",
+          "artworkUrl100": "images/Blue_question_mark_icon.svg.png"
+        }
+      ],
+      "id": 5
     }
   ]
 }
