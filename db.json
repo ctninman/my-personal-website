@@ -1,5 +1,5 @@
 {
-  "userCollections" :[
+  "userCollections": [
     {
       "userName": "loobylawn",
       "id": 1,
@@ -84,7 +84,7 @@
           "releaseDate": "2005",
           "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music6/v4/c7/8d/49/c78d4900-040b-b9be-408b-08bd9a151306/source/100x100bb.jpg"
         }
-      ] 
+      ]
     },
     {
       "userName": "bob",
@@ -170,7 +170,175 @@
           "releaseDate": "",
           "artworkUrl100": ""
         }
-      ] 
-    }    
+      ]
+    },
+    {
+      "userName": "jimbo jones",
+      "albums": "",
+      "id": 3
+    },
+    {
+      "userName": "jimbo jones",
+      "albums": "",
+      "id": 4,
+      "albumRank": "4",
+      "artistName": "Sepultura",
+      "collectionName": "Roots (Remastered)",
+      "primaryGenreName": "Metal",
+      "releaseDate": "1996",
+      "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/b5/85/db/b585dbdb-461a-6ee7-0c36-016a38ef2573/source/100x100bb.jpg"
+    },
+    {
+      "userName": "peterpan",
+      "albums": "",
+      "id": 5
+    },
+    {
+      "userName": "peterpan",
+      "albums": "",
+      "id": 6
+    },
+    {
+      "userName": "peterpan",
+      "albums": "",
+      "id": 7
+    },
+    {
+      "userName": "peterpan",
+      "albums": "",
+      "id": 8
+    },
+    {
+      "userName": "chirpy",
+      "id": 9,
+      "albums": [
+        {
+          "ranking": 1,
+          "artistName": "Can",
+          "collectionName": "Future Days",
+          "primaryGenreName": "Rock",
+          "releaseDate": "1973",
+          "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music/v4/27/d3/9d/27d39dba-e854-4f4a-5b8b-fcec6fb64739/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 2,
+          "artistName": "Meridian Brothers",
+          "collectionName": "Desesperanza",
+          "primaryGenreName": "Música tropical",
+          "releaseDate": "2012",
+          "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music125/v4/ab/82/01/ab8201f7-8b67-5325-a350-898fd76005e4/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 3,
+          "artistName": "Oranssi Pazuzu",
+          "collectionName": "Värähtelijä",
+          "primaryGenreName": "Death Metal/Black Metal",
+          "releaseDate": "2016",
+          "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music69/v4/5a/b2/2a/5ab22aad-6a25-bd65-3d5d-1f5ddd9d7077/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 4,
+          "artistName": "Neurosis",
+          "collectionName": "Through Silver In Blood",
+          "primaryGenreName": "Metal",
+          "releaseDate": "1996",
+          "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/ee/87/ca/ee87ca4c-9a1f-ca20-2d26-70d5ec4dc488/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 5,
+          "artistName": "D.D Dumbo",
+          "collectionName": "Utopia Defeated",
+          "primaryGenreName": "Alternative",
+          "releaseDate": "2016",
+          "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/ca/94/d7/ca94d769-572e-2ad4-c0bf-221f646ca400/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 6,
+          "artistName": "Meridian Brothers",
+          "collectionName": "Cumbia Siglo XXI",
+          "primaryGenreName": "Música tropical",
+          "releaseDate": "2020",
+          "artworkUrl100": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/5e/96/32/5e96324d-8d59-f825-7162-db225613daba/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 7,
+          "artistName": "High On Fire",
+          "collectionName": "Blessed Black Wings",
+          "primaryGenreName": "Metal",
+          "releaseDate": "2005",
+          "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music/v4/d8/34/6e/d8346e7e-fb84-5ead-26a6-3d11d6ac0713/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 8,
+          "artistName": "Can",
+          "collectionName": "Tago Mago",
+          "primaryGenreName": "Rock",
+          "releaseDate": "1971",
+          "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music3/v4/01/09/2b/01092baf-6f99-ca43-5561-798a6e2bf58c/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 9,
+          "artistName": "Bear In Heaven",
+          "collectionName": "Beast Rest Forth Mouth",
+          "primaryGenreName": "Alternative",
+          "releaseDate": "2009",
+          "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/5b/b4/70/5bb47052-352a-bc04-2213-5e1cf4a63c53/source/100x100bb.jpg"
+        },
+        {
+          "ranking": 10,
+          "artistName": "Wolf Parade",
+          "collectionName": "Apologies to the Queen Mary",
+          "primaryGenreName": "Alternative",
+          "releaseDate": "2005",
+          "artworkUrl100": "https://is5-ssl.mzstatic.com/image/thumb/Music6/v4/c7/8d/49/c78d4900-040b-b9be-408b-08bd9a151306/source/100x100bb.jpg"
+        }
+      ],
+      "albumRank": "10",
+      "artistName": "Meridian Brothers",
+      "collectionName": "¿Dónde Estás María?",
+      "primaryGenreName": "Worldwide",
+      "releaseDate": "2017",
+      "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music127/v4/b8/d6/93/b8d693d7-a84b-786c-9949-92d603eeb4c9/source/100x100bb.jpg"
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 10
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 11
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 12
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 13
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 14
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 15
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 16
+    },
+    {
+      "userName": "chirpy",
+      "albums": "",
+      "id": 17
+    }
   ]
 }
