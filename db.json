@@ -338,7 +338,13 @@
     {
       "userName": "chirpy",
       "albums": "",
-      "id": 17
+      "id": 17,
+      "albumRank": "1",
+      "artistName": "Sepultura",
+      "collectionName": "Roots (Remastered)",
+      "primaryGenreName": "Metal",
+      "releaseDate": "1996",
+      "artworkUrl100": "https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/b5/85/db/b585dbdb-461a-6ee7-0c36-016a38ef2573/source/100x100bb.jpg"
     }
   ]
 }

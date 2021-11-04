@@ -1,4 +1,4 @@
-
+// ??? BUTTON IN DIV CLASS ALBUM COVER IS SET TO DISPLAY NONE, WANT IT TO DISPLAY
 
 
 
@@ -99,6 +99,7 @@ function changeTopTenInfo (user, i) {
   <img class='placed-cover' src=${user.albums[i].artworkUrl100} height="100" width="100">
   <input type="button" class='button2' id='remove-${i+1} text="X" value="X"></input>`;
   console.log('through the function')
+  // document.getElementById(`remove-${i+1}`).style.visibility = "visible"
 }
 
 
@@ -116,62 +117,63 @@ function renderAlbum (album) {
   searchDisplay.appendChild(albumInfo);
           // *** CREATE NUMBER FORM WHEN AN ALBUM IN SEARCH RESULTS IS CLICKED *** //     
   albumInfo.addEventListener('click', () => {
-        let checkExist = !!document.getElementById('number-form');
-        if (checkExist === false) {
-        let numForm = document.createElement('form');
-        numForm.setAttribute('id', 'number-form');
-        let numInputForm = document.createElement('input');
-        numInputForm.setAttribute('type', 'number');
-        numInputForm.setAttribute('min', '1');
-        numInputForm.setAttribute('max', '10');
-        numInputForm.setAttribute('id', 'number_control');
-        numInputForm.setAttribute('name', 'number-ctrl');
-        numForm.appendChild(numInputForm);
-        let cancelAdd = document.createElement('BUTTON');
-        cancelAdd.textContent = 'X';
-        numForm.appendChild(cancelAdd);
-        let submitNumber = document.createElement('input');
-        submitNumber.setAttribute('type', 'submit');
-        submitNumber.setAttribute('value', 'TOP TEN!');
-        submitNumber.setAttribute('class', 'button');
-        numForm.appendChild(submitNumber);
-        albumInfo.appendChild(numForm);
+      let checkExist = !!document.getElementById('number-form');
+      if (checkExist === false) {
+      let numForm = document.createElement('form');
+      numForm.setAttribute('id', 'number-form');
+      let numInputForm = document.createElement('input');
+      numInputForm.setAttribute('type', 'number');
+      numInputForm.setAttribute('min', '1');
+      numInputForm.setAttribute('max', '10');
+      numInputForm.setAttribute('id', 'number_control');
+      numInputForm.setAttribute('name', 'number-ctrl');
+      numForm.appendChild(numInputForm);
+      let cancelAdd = document.createElement('BUTTON');
+      cancelAdd.textContent = 'X';
+      numForm.appendChild(cancelAdd);
+      let submitNumber = document.createElement('input');
+      submitNumber.setAttribute('type', 'submit');
+      submitNumber.setAttribute('value', 'TOP TEN!');
+      submitNumber.setAttribute('class', 'button');
+      numForm.appendChild(submitNumber);
+      albumInfo.appendChild(numForm);
             // *** MOVE ALBUM TO TOP TEN WITH NUMBER FORM *** // 
             // *** USING NUMBER FORM, CAPTURE ALBUM RANK *** //
-    numForm.addEventListener ('submit', (e) => {
-      e.preventDefault();
-      searchDisplay.innerHTML = "";
-      albumRank = e.target.number_control.value;
-      let albumObject = {
-        albumRank: e.target.number_control.value,
-        artistName: album.artistName,
-        collectionName: album.collectionName,
-        primaryGenreName: album.primaryGenreName,
-        releaseDate: album.releaseDate.slice(0, 4),
-        artworkUrl100: album.artworkUrl100
-      };
+  numForm.addEventListener ('submit', (e) => {
+    e.preventDefault();
+    searchDisplay.innerHTML = "";
+    albumRank = e.target.number_control.value;
+    let albumObject = {
+      albumRank: e.target.number_control.value,
+      artistName: album.artistName,
+      collectionName: album.collectionName,
+      primaryGenreName: album.primaryGenreName,
+      releaseDate: album.releaseDate.slice(0, 4),
+      artworkUrl100: album.artworkUrl100
+    };
 // ????????? When calling patchUserTopTen, how can I make that a separate object within
 // ????????? the user collection array?
-      console.log('album object:',albumObject)
-      patchUserTopTen (albumObject);
+    console.log('album object:',albumObject)
+    patchUserTopTen (albumObject);
             // *** USING ALBUM RANK, ADD ALBUM COVER *** //
             // *** AND ARTIST, ALBUM, GENRE, AND YEAR *** //
-      if (albumRank == parseInt(document.getElementById(`match-ranking-${albumRank}`).innerText)) {
-        document.getElementById(`para-${albumRank}`).innerHTML = `artist: ${album.artistName}<br>
-          album: ${album.collectionName}<br>
-          genre: ${album.primaryGenreName}<br>
-          year: ${album.releaseDate.slice(0, 4)}`;
-          document.getElementById(`cover-${albumRank}`).innerHTML = `
-          <img class='placed-cover' src=${album.artworkUrl100} height="100" width="100">
-          <input type="button" class='button2' id='remove-${albumRank}' text="X" value="X"></input>`;
-          window.location.hash = `album-${albumRank}`;
+    if (albumRank == parseInt(document.getElementById(`match-ranking-${albumRank}`).innerText)) {
+      document.getElementById(`para-${albumRank}`).innerHTML = `artist: ${album.artistName}<br>
+        album: ${album.collectionName}<br>
+        genre: ${album.primaryGenreName}<br>
+        year: ${album.releaseDate.slice(0, 4)}`;
+        document.getElementById(`cover-${albumRank}`).innerHTML = `
+        <img class='placed-cover' src=${album.artworkUrl100} height="100" width="100">`
+        window.location.hash = `album-${albumRank}`;
+        document.getElementById(`remove-${albumRank}`).style.visibility = 'visible'
       }
     })
   }
 })
 }
 
-
+        // *** USES userDataObject (object with user name and albums key) TO CREATE NEW USER AND ID
+        // *** IN DATABASE. CALLED IN fetchUserData, WHICH IS CALLED IN enterID LISTENER *** //
 function createUserData (userDataObject) {
   fetch('http://localhost:3000/userCollections', {
     method: 'POST',
@@ -198,7 +200,21 @@ function patchUserTopTen (albumObject) {
   .then(res => res.json())
   .then(album => console.log(album))
 }
+
+
+        // *** VERIFY THAT USER COMMENT IS EQUAL TO TEN WORDS *** //
+        // *** CALLED IN commentNUMBER EVENT LISTENERS *** //
+function countWords (comment) {
+  let count = 0;
+  for (let i = 0; i < comment.length; i++){
+     const space = comment[i];
+     if(space !== ' '){
+        continue; };
+        count++; };
+     return count + 1;
+};
  
+
                 // *** EVENT LISTENERS *** //
                 // *** _______________ *** //
 
@@ -211,7 +227,6 @@ enterId.addEventListener('submit', (event) => {
   `${userName}'s Top Ten Albums`;
   commentBox.textContent = `Suggestions for ${userName}:`;
   enterId.reset();
-  // createUserData(userDataObject);
   fetchUserData();
 })
 
@@ -254,6 +269,7 @@ artistSearch.addEventListener('submit', (event) => {
 
       // *** DISPLAY COMMENT BOX AFTER CLICK ON '+ COMMENT' BUTTON *** //
       // *** _____________________________________________________ *** //
+      // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
 
 commentButtonOne.addEventListener('click', () => {
   commentOne.style.display = 'inline-block'
@@ -307,6 +323,7 @@ commentButtonTen.addEventListener('click', () => {
 
         // *** SUBMIT 10 WORD COMMENT FOR ALBUM *** //
         // *** ________________________________ *** //
+        // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
     
 commentOne.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -425,13 +442,5 @@ suggestionForm.addEventListener('submit', (event) => {
 })
 
 
-function countWords (comment) {
-  let count = 0;
-  for (let i = 0; i < comment.length; i++){
-     const space = comment[i];
-     if(space !== ' '){
-        continue; };
-        count++; };
-     return count + 1;
-};
+
   
