@@ -19,6 +19,12 @@ body {
     color: white;
 }
 
+.submit-button {
+    background-color: black;
+    font-family: 'Revalia', cursive;
+    color: white;
+}
+
 input[type=text] {
     text-align: left;
     padding: 2px 2px;

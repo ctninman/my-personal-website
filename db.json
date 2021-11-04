@@ -190,8 +190,9 @@
     },
     {
       "userName": "peterpan",
-      "albums": "",
-      "id": 5
+      "albums": [],
+      "id": 5,
+      "album": []
     },
     {
       "userName": "peterpan",

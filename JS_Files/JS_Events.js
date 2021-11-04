@@ -1,58 +1,40 @@
-// ??? BUTTON IN DIV CLASS ALBUM COVER IS SET TO DISPLAY NONE, WANT IT TO DISPLAY
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
   // *** Eventually: Check for user login info and load *** //
   console.log(`Now I will load ${userName}'s chosen albums`)
 })
 
 
-// *** DECLARED VARIABLES *** //
-// *** __________________ *** //
+                // *** DECLARED VARIABLES *** //
+                // *** __________________ *** //
 
-let enterId         = document.getElementById('enter-id');
-// ?????? IS IT OK TO MAKE THE USER ID IN A GLOBAL VARIABLE ?????? //
-// ?????? userID IS CALLED TO LOAD USER CONTENT ?????? //
 let userID;          
-let userName        = "";
-let albumRank       = "";
-let albumComment    = "";
-let nameSuggestion  = "";
-let albumLoved      = "";
-let albumSuggestion = "";
-let artistSuggestion= "";
-let albumSearch     = document.getElementById('album-form');
-let artistSearch    = document.getElementById('artist-form');
-let searchDisplay   = document.getElementById('album-search-display');
-let suggestionForm  = document.getElementById('suggestion');
-let commentBox      = document.getElementById('comment-box');
-
-        // *** COMMENT BUTTON FOR EACH ALBUM *** //
-
-let commentButtonOne   = document.getElementById('comment-button-one');
-let commentButtonTwo   = document.getElementById('comment-button-two');
-let commentButtonThree = document.getElementById('comment-button-three');
-let commentButtonFour  = document.getElementById('comment-button-four');
-let commentButtonFive  = document.getElementById('comment-button-five');
-let commentButtonSix   = document.getElementById('comment-button-six');
-let commentButtonSeven = document.getElementById('comment-button-seven');
-let commentButtonEight = document.getElementById('comment-button-eight');
-let commentButtonNine  = document.getElementById('comment-button-nine');
-let commentButtonTen   = document.getElementById('comment-button-ten');
+let userName          = "";
+let albumRank         = "";
+let albumComment      = "";
+let nameSuggestion    = "";
+let albumLoved        = "";
+let albumSuggestion   = "";
+let artistSuggestion  = "";
+let enterId           = document.getElementById('enter-id');
+const topTen          = document.getElementById('top-ten')
+const albumSearch     = document.getElementById('album-form');
+const artistSearch    = document.getElementById('artist-form');
+const searchDisplay   = document.getElementById('album-search-display');
+const suggestionForm  = document.getElementById('suggestion');
+const commentBox      = document.getElementById('comment-box');
 
         // *** COMMENT BOX FOR EACH ALBUM *** //
 
-let commentOne   = document.getElementById('reason-one');
-let commentTwo   = document.getElementById('reason-two');
-let commentThree = document.getElementById('reason-three');
-let commentFour  = document.getElementById('reason-four');
-let commentFive  = document.getElementById('reason-five');
-let commentSix   = document.getElementById('reason-six');
-let commentSeven = document.getElementById('reason-seven');
-let commentEight = document.getElementById('reason-eight');
-let commentNine  = document.getElementById('reason-nine');
-let commentTen   = document.getElementById('reason-ten');
+let commentOne   = document.getElementById('reason-1');
+let commentTwo   = document.getElementById('reason-2');
+let commentThree = document.getElementById('reason-3');
+let commentFour  = document.getElementById('reason-4');
+let commentFive  = document.getElementById('reason-5');
+let commentSix   = document.getElementById('reason-6');
+let commentSeven = document.getElementById('reason-7');
+let commentEight = document.getElementById('reason-8');
+let commentNine  = document.getElementById('reason-9');
+let commentTen   = document.getElementById('reason-10');
 
 
               // *** FUNCTION DECLARATIONS *** //
@@ -66,13 +48,21 @@ function fetchUserData (userDataObject) {
   .then(res => res.json())
   .then(function (userData) {
     console.log(userData)
-    userData.find((user) => {
+    let foundUser = userData.find((user) => {
       console.log(user)
-      if (userName === user.userName) {
-        userID = user.id;
-        for (let i = 0; i <user.albums.length; i++) {
-          changeTopTenInfo(user, i)
-        } 
+      return userName === user.userName
+    })
+    if (foundUser) {
+        userID = foundUser.id;
+        for (let i = 0; i <foundUser.albums.length; i++) {
+          changeTopTenInfo(foundUser, i)
+        }
+    }
+  })
+}
+      // if foundUser ...
+      // if (userName === user.userName) {
+      //   } 
 // ?????????? GOAL, IF USER NAME IS FOUND, LOAD THAT USERS COLLECTION, THIS WORKS BUT CONTINUES TO ITERATE
 // ?????????? THROUGH ALL USERS AFTER. IF I FIND A MATCHING USER NAME, RETURN THAT COLLECTION
 // ?????????? IF THERE IS NO MATCH, RUN createUserData. CURRENTLY CREATES NEW USER FOR EACH EXISTING USER
@@ -83,13 +73,11 @@ function fetchUserData (userDataObject) {
       //     albums: ""
       //   }
       //   createUserData(userDataObject);
-      }
-    })
-  })
-}
+    // })
 
         // *** USE DATABASE TO RENDER INFO OF EACH ALBUM *** //
         // *** CALLED IN fetchUserData *** //
+
 function changeTopTenInfo (user, i) {
   document.getElementById(`para-${i+1}`).innerHTML = `artist: ${user.albums[i].artistName}<br>
   album: ${user.albums[i].collectionName}<br>
@@ -99,7 +87,7 @@ function changeTopTenInfo (user, i) {
   <img class='placed-cover' src=${user.albums[i].artworkUrl100} height="100" width="100">
   <input type="button" class='button2' id='remove-${i+1} text="X" value="X"></input>`;
   console.log('through the function')
-  // document.getElementById(`remove-${i+1}`).style.visibility = "visible"
+  // document.getElementById(`remove-${i+1}`).style.display = ""
 }
 
 
@@ -165,7 +153,7 @@ function renderAlbum (album) {
         document.getElementById(`cover-${albumRank}`).innerHTML = `
         <img class='placed-cover' src=${album.artworkUrl100} height="100" width="100">`
         window.location.hash = `album-${albumRank}`;
-        document.getElementById(`remove-${albumRank}`).style.visibility = 'visible'
+        // document.getElementById(`remove-${albumRank}`).style.visibility = 'visible'
       }
     })
   }
@@ -204,10 +192,10 @@ function patchUserTopTen (albumObject) {
 
         // *** VERIFY THAT USER COMMENT IS EQUAL TO TEN WORDS *** //
         // *** CALLED IN commentNUMBER EVENT LISTENERS *** //
-function countWords (comment) {
+function countWords (userComment) {
   let count = 0;
-  for (let i = 0; i < comment.length; i++){
-     const space = comment[i];
+  for (let i = 0; i < userComment.length; i++){
+     const space = userComment[i];
      if(space !== ' '){
         continue; };
         count++; };
@@ -237,7 +225,7 @@ albumSearch.addEventListener('submit', (event) => {
   event.preventDefault();
   searchDisplay.innerHTML = "";
   let albumsArray = [];
-  return fetch(`https://itunes.apple.com/search?term=${event.target.album_terms.value}&entity=album&attribute=albumTerm`, {method: 'GET'})
+  return fetch(url(event.target.album_terms.value, 'album'), {method: 'GET'})
   .then(res => res.json())
   .then(function (albumData) {
     albumsArray = albumData.results;
@@ -249,14 +237,17 @@ albumSearch.addEventListener('submit', (event) => {
 
 
         // *** SEARCH ITUNES API WITH ARTIST PARAMETERS *** //
-      
+let url = (searchTerm, type) => {
+  return `https://itunes.apple.com/search?term=${searchTerm}&entity=album&attribute=${type}Term`
+}
+        
 artistSearch.addEventListener('submit', (event) => {
   event.preventDefault();
   searchDisplay.innerHTML = "";
   let albumsArray = [];
       // ????? IS IT POSSIBLE TO DECLARE THE INTERPOLATING URL OUTSIDE THE FUNCTION? //
       // ????? ARTIST IS UNDEFINED // IF SO, CREATE FUNCTION THAT PASSES IN URL 
-  return fetch(`https://itunes.apple.com/search?term=${event.target.artist_terms.value}&entity=album&attribute=artistTerm`, {method: 'GET'})
+  return fetch(url(event.target.artist_terms.value, 'artist'), {method: 'GET'})
   .then(res => res.json())
   .then(function (albumData) {
     albumsArray = albumData.results;
@@ -271,157 +262,27 @@ artistSearch.addEventListener('submit', (event) => {
       // *** _____________________________________________________ *** //
       // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
 
-commentButtonOne.addEventListener('click', () => {
-  commentOne.style.display = 'inline-block'
-  commentButtonOne.style.display = 'none'
-})
 
-commentButtonTwo.addEventListener('click', () => {
-  commentTwo.style.display = 'inline-block'
-  commentButtonTwo.style.display = 'none'
-})
 
-commentButtonThree.addEventListener('click', () => {
-  commentThree.style.display = 'inline-block'
-  commentButtonThree.style.display = 'none'
-})
 
-commentButtonFour.addEventListener('click', () => {
-  commentFour.style.display = 'inline-block'
-  commentButtonFour.style.display = 'none'
-})
 
-commentButtonFive.addEventListener('click', () => {
-  commentFive.style.display = 'inline-block'
-  commentButtonFive.style.display = 'none'
-})
-
-commentButtonSix.addEventListener('click', () => {
-  commentSix.style.display = 'inline-block'
-  commentButtonSix.style.display = 'none'
-})
-
-commentButtonSeven.addEventListener('click', () => {
-  commentSeven.style.display = 'inline-block'
-  commentButtonSeven.style.display = 'none'
-})
-
-commentButtonEight.addEventListener('click', () => {
-  commentEight.style.display = 'inline-block'
-  commentButtonEight.style.display = 'none'
-})
-
-commentButtonNine.addEventListener('click', () => {
-  commentNine.style.display = 'inline-block'
-  commentButtonNine.style.display = 'none'
-})
-
-commentButtonTen.addEventListener('click', () => {
-  commentTen.style.display = 'inline-block'
-  commentButtonTen.style.display = 'none'
-})
-
-        // *** SUBMIT 10 WORD COMMENT FOR ALBUM *** //
-        // *** ________________________________ *** //
-        // ?????? IS THERE A WAY TO DRY UP THIS SECTION ?????? //
-    
-commentOne.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_one_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-one').textContent = albumComment
-  }
-})
-
-commentTwo.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_two_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-two').textContent = albumComment
-  }
-})
-
-commentThree.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_three_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-three').textContent = albumComment
-  }
-})
-
-commentFour.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_four_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-four').textContent = albumComment
-  }
-})
-
-commentFive.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_five_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-five').textContent = albumComment
-  }
-})
-
-commentSix.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_six_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-six').textContent = albumComment
-  }
-})
-
-commentSeven.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_seven_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-seven').textContent = albumComment
-  }
-})
-
-commentEight.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_eight_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-eight').textContent = albumComment
-  }
-})
-
-commentNine.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_nine_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-nine').textContent = albumComment
-  }
-})
-
-commentTen.addEventListener('submit', (e) => {
-  e.preventDefault();
-  albumComment = e.target.reason_ten_text.value
-  if (countWords(albumComment) !== 10) {
-    alert("That's not 10 words!")
-  } else {
-    document.getElementById('reason-form-ten').textContent = albumComment
+topTen.addEventListener('click', (event) => {
+  if (event.target.className === 'button') {
+    let numRank = parseInt(event.target.id.slice(15))
+    document.getElementById(`reason-${numRank}`).style.display = 'inline-block'
+    document.getElementById(`comment-button-${numRank}`).style.display = 'none'
+    document.getElementById(`reason-${numRank}`).addEventListener('submit', (e) => {
+      e.preventDefault();
+      ///////?????????????????????????
+      debugger
+      albumComment = e.currentTarget.reason.value
+      console.log('album Comment:', albumComment)
+      if (countWords(albumComment) !== 10) {
+        alert("That's not 10 words!")
+      } else {
+        document.getElementById(`reason-${numRank}`).textContent = albumComment
+      }
+    })
   }
 })
 
@@ -444,3 +305,4 @@ suggestionForm.addEventListener('submit', (event) => {
 
 
   
+// google dataset.html event.target.dataset.id
