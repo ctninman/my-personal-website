@@ -15,7 +15,7 @@
             <!-- *** ENTER USERNAME *** -->
     <form id='enter-id' style='text-align: right' style='margin-right: 20px;'>
       <input type='text' id='user_id' placeholder="Enter userName">
-      <input class='button' type='submit' value='SUBMIT'>
+      <input class='button' class='hover' id='enter-name' type='submit' value='SUBMIT'>
     </form>
     <div id='user-header'>
       <h2 id='userName-topten' class="header"><em>userName's Top Ten Albums</em></h2>
@@ -47,7 +47,7 @@
         <div class='list-number'><h1 id='match-ranking-1'>1</h1></div>
         <div class='album-cover' id='cover-1'>
           <img src='images/Blue_question_mark_icon.svg.png' height="100" width="100">
-          <input id='remove-1' type="button" class='button2' text="X" value="X" style='display: none;'>
+          <!-- <input id='remove-1' type="button" class='button2' text="X" value="X" style='display: none;'> -->
         </div>
         <div class='album-info' style='background-color: #27884E'>
           <p class='album-para' id='para-1'>artist: Undefined<br>
@@ -57,12 +57,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-1' style='background-color: #27884E; color: #ff4d4d;':>
+      <div class="reason-form" id='reason-form-1' style='background-color: #27884E; color: #ff4d4d;'>
         <button class='button' id='comment-button-1'>+ COMMENT</button>
         <form id='reason-1' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_one_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_1_text">
           <input type="submit" class='button' value='SUBMIT' id='user-reason-1'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-1'></p>
+          <button class='remove-comment' id='remove-comment-1'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 2 *** -->
@@ -80,12 +84,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-2' style='background-color: lightgreen'>
+      <div class="reason-form" id='reason-form-2' style='background-color: lightgreen;'>
         <button class='button' id='comment-button-2'>+ COMMENT</button>
         <form id='reason-2' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_two_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_2_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-2'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-2'></p>
+          <button class='remove-comment' id='remove-comment-2'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 3 *** -->
@@ -103,12 +111,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-3' style='background-color: #27884E'>
+      <div class="reason-form" id='reason-form-3' style='background-color: #27884E; ; color: #ff4d4d;'>
         <button class='button' id='comment-button-3'>+ COMMENT</button>
         <form id='reason-3' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_three_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_3_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-3'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-3'></p>
+          <button class='remove-comment' id='remove-comment-3'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 4 *** -->
@@ -129,9 +141,13 @@
       <div class="reason-form" id='reason-form-4' style='background-color: lightgreen'>
         <button class='button' id='comment-button-4'>+ COMMENT</button>
         <form id='reason-4' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_four_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_4_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-4'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-4'></p>
+          <button class='remove-comment' id='remove-comment-4'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 5 *** -->
@@ -149,12 +165,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-5' style='background-color: #27884E'>
+      <div class="reason-form" id='reason-form-5' style='background-color: #27884E; color: #ff4d4d'>
         <button class='button' id='comment-button-5'>+ COMMENT</button>
         <form id='reason-5' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_five_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_5_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-5'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-5'></p>
+          <button class='remove-comment' id='remove-comment-5'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 6 *** -->
@@ -175,9 +195,13 @@
       <div class="reason-form" id='reason-form-6' style='background-color: lightgreen'>
         <button class='button' id='comment-button-6'>+ COMMENT</button>
         <form id='reason-6' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_six_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_6_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-6'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-6'></p>
+          <button class='remove-comment' id='remove-comment-6'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 7 *** -->
@@ -195,12 +219,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-7' style='background-color: #27884E'>
+      <div class="reason-form" id='reason-form-7' style='background-color: #27884E; color: #ff4d4d;'>
         <button class='button' id='comment-button-7'>+ COMMENT</button>
         <form id='reason-7' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_seven_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_7_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-7'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-7'></p>
+          <button class='remove-comment' id='remove-comment-7'>X</button>
+        </div>
       </div>
           
             <!-- *** NUMBER 8 *** -->
@@ -221,9 +249,13 @@
       <div class="reason-form" id='reason-form-8' style='background-color: lightgreen'>
         <button class='button' id='comment-button-8'>+ COMMENT</button>
         <form id='reason-8' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_eight_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_8_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-8'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-8'></p>
+          <button class='remove-comment' id='remove-comment-8'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 9 *** -->
@@ -241,12 +273,16 @@
         </div> 
       </div>
 
-      <div class="reason-form" id='reason-form-9' style='background-color: #27884E'>
+      <div class="reason-form" id='reason-form-9' style='background-color: #27884E; color: #ff4d4d'>
         <button class='button' id='comment-button-9'>+ COMMENT</button>
         <form id='reason-9' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_nine_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_9_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-9'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-9'></p>
+          <button class='remove-comment' id='remove-comment-9'>X</button>
+        </div>
       </div>
 
             <!-- *** NUMBER 10 *** -->
@@ -267,9 +303,13 @@
       <div class="reason-form" id='reason-form-10' style='background-color: lightgreen'>
         <button class='button' id='comment-button-10'>+ COMMENT</button>
         <form id='reason-10' class='add-reason-form'>
-          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_ten_text">
+          <input type="text" name="reason" placeholder="WHY YOU LOVE THIS ALBUM IN EXACTLY 10 WORDS, OK?" id="reason_10_text">
           <input type="submit" class='submit-button' value='SUBMIT' id='user-reason-10'>
         </form>
+        <div>
+          <p class='comment-display' id='comment-display-10'></p>
+          <button class='remove-comment' id='remove-comment-10'>X</button>
+        </div>
       </div>
     </div>
 
@@ -282,9 +322,12 @@
       <input type="submit" class='button' value='SUGGEST' id='search-artists'>
     </form>
           <!-- *** DISPLAY OF OTHER USER COMMENTS *** -->
-    <div id='comment-box' style="margin-top: 20px;">
-      <h2 style="text-align: center;">Suggestions</h2>
+   
+    <div >
+      <h2 class='header' id='comment-box-header'>Suggestions</h2>
     </div>
+
+    <ul id='comment-box' style="margin-top: 20px;"></ul>
 
     <script src="JS_Files/JS_Data.js"></script>
     <script src="JS_Files/index.js"></script>
